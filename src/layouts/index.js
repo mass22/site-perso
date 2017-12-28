@@ -27,23 +27,26 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          Massimo Russo
         </Link>
       </h1>
     </div>
   </div>
 )
 
+
+ 
+
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title='Mon site'
+      title='Massimo Russo - Front-end Developer'
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
     >
-    <html lang="fr-CA" />
+
     </Helmet>
     <Header />
     <div

@@ -1,6 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Img from "gatsby-image"
+import Helmet from 'react-helmet'
+import config from "../../data/SiteConfig";
+
 
 import * as PropTypes from "prop-types"
 
@@ -9,9 +12,9 @@ const propTypes = {
   }
 
 
-class BlogueEnPage extends React.Component {
+class BloguePage extends React.Component {
     render () {
-      const enArticles = this.props.data.en.edges
+      const frArticles = this.props.data.fr.edges
 
         const ARTICLE = ({ node }) => (
           
@@ -26,18 +29,23 @@ class BlogueEnPage extends React.Component {
                   sizes={node.media.sizes}
                 />
                 <p>{node.createdAt}</p>
-                <Link to={`/blog/${node.slug}/`}>lire l'article</Link>
+                <Link to={`/blogue/${node.slug}/`}>lire l'article</Link>
             </div>
         )
           
         return(
+
             <div>
+                <Helmet>
+                  <title>{`Blogue | ${config.siteTitle}`}</title>
+                </Helmet>
+
                 <h1>Hi from the Blogue</h1>
                 <p>Welcome to Blogue</p>
                 <Link to="/">Go back to the Homepage</Link>
                 <hr/>
 
-                {enArticles.map(({ node }, i) => (
+                {frArticles.map(({ node }, i) => (
                   <ARTICLE node={node} key={node.id} />
                 ))}
             </div>
@@ -46,14 +54,14 @@ class BlogueEnPage extends React.Component {
 }
 
 
-BlogueEnPage.propTypes = propTypes
+BloguePage.propTypes = propTypes
 
-export default BlogueEnPage
+export default BloguePage
 
-export const pageBlogueEnQuery = graphql`
-query PageBlogueEnQuery {
-  en: allContentfulArticles(
-      filter: { node_locale: { eq: "en-CA" } } 
+export const pageBlogueQuery = graphql`
+query PageBlogueQuery {
+  fr: allContentfulArticles(
+      filter: { node_locale: { eq: "fr-CA" } } 
       sort: {fields: [createdAt] order: DESC}
       limit: 5 ){
     edges {
@@ -62,7 +70,7 @@ query PageBlogueEnQuery {
         title
         description
         slug
-        createdAt(formatString: "MMM DD, YYYY") 
+        createdAt(formatString: "DD MMM, YYYY") 
         media {
           sizes(maxWidth: 100) {
             base64

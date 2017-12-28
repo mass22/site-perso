@@ -34,6 +34,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         // Create Article pages
         const articleTemplate = path.resolve(`./src/templates/article.js`)
         
+        
+        
         _.each(result.data.allContentfulArticles.edges, edge => {
           createPage({
             path: `/blogue/${edge.node.slug}/`,

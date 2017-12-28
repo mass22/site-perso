@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Img from "gatsby-image"
+import Helmet from 'react-helmet'
+import config from "../../data/SiteConfig";
 
 import * as PropTypes from "prop-types"
 
@@ -23,6 +25,10 @@ class ArticleTemplate extends React.Component {
       const metaTitle = {title}
         return ( 
             <div>
+              <Helmet>
+                <title>{`${title} | ${config.siteTitle}`}</title>
+              </Helmet>
+
                 <h1>{title}</h1>
                 <Img
                   src={media.sizes.src}

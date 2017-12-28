@@ -2,7 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components';
 
-import * as palette from '../../layouts/scss/variables'
+
+import * as palette from '../layouts/scss/variables'
 
 const Title = styled.h1`
 font-size: 1.5em;
