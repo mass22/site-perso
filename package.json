@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "Massimo-Russo-Personal-Website",
+  "description": "Massimo Russo | Front-end Developer",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Massimo Russo <russo.mass@gmail.com>",
   "dependencies": {
     "gatsby": "^1.9.135",
     "gatsby-image": "^1.0.30",

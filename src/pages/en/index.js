@@ -17,11 +17,11 @@ class IndexEnPage extends React.Component {
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
+        <Link to="/en/page-2/">Go to page 2</Link>
         <br/>
-        <Link to="/blogue/">Go to blogue</Link>
+        <Link to="/en/blogue/">Go to blogue</Link>
         <br/>
-        <Link to="/works/">Go to works</Link>
+        <Link to="/en/works/">Go to works</Link>
         <br/>
         <Link to="/">Français</Link>
         <h1>

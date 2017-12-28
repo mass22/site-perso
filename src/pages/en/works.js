@@ -9,9 +9,9 @@ const propTypes = {
   }
 
 
-class WorksPage extends React.Component {
+class WorksEnPage extends React.Component {
     render () {
-      const frWorks = this.props.data.fr.edges
+      const enWorks = this.props.data.en.edges
 
         const WORKS = ({ node }) => (
             <div>
@@ -19,7 +19,7 @@ class WorksPage extends React.Component {
                 <p>{node.description.description}</p>
                 <p>{node.date}</p>
                 <p>{node.company}</p>
-                <a href={node.link} target="_blank">Aller</a><br/>
+                <a href={node.link} target="_blank">Visit Website</a><br/>
                 <span>{node.category.name}</span><br/>
                 {[node.tags.map((tag, i) =>(
                     <small>{`${tag.name} - `}</small>
@@ -39,12 +39,12 @@ class WorksPage extends React.Component {
           
         return(
             <div>
-                <h1>Hi from the Works</h1>
+                <h1>English</h1>
                 <p>Welcome to Works</p>
                 <Link to="/">Go back to the Homepage</Link>
                 <hr/>
 
-                {frWorks.map(({ node }, i) => (
+                {enWorks.map(({ node }, i) => (
                   <WORKS node={node} key={node.id} />
                 ))}
             </div>
@@ -53,14 +53,14 @@ class WorksPage extends React.Component {
 }
 
 
-WorksPage.propTypes = propTypes
+WorksEnPage.propTypes = propTypes
 
-export default WorksPage
+export default WorksEnPage
 
-export const pageWorksQuery = graphql`
-query PageWorksQuery {
-  fr: allContentfulWorks(
-      filter: { node_locale: { eq: "fr-CA" } } 
+export const pageWorksEnQuery = graphql`
+query PageWorksEnQuery {
+  en: allContentfulWorks(
+      filter: { node_locale: { eq: "en-CA" } } 
       sort: {fields: [createdAt] order: DESC}
       limit: 5 ){
     edges {
