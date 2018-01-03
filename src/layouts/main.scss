@@ -48,6 +48,8 @@ li {
     @extend .typo__5;
 }
 
+
+
 .ui.segment {
     box-shadow: none;
     border-radius: 0;
@@ -68,6 +70,27 @@ li {
     }
 }
 
+.ui.full-width.container {
+    .header {
+        margin: 0 auto;
+        padding: 1.45rem 0;
+        max-width: 100% !important;
+        @media only screen and (max-width: 767px) {
+            width: auto !important;
+        }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            width: 723px !important;
+        }
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            width: 933px !important;
+        }
+        @media only screen and (min-width: 1200px) {
+            width: 1127px !important;
+            
+        }
+    }
+}
+
 .active {
     background-color: $THIRD;
     .item {
@@ -76,12 +99,14 @@ li {
     }
 }
 .menu {
-    a {
-        &:hover,
-        &:focus {
-            background-color: #bbb;
-            .item {
-                color: $PRIMARY !important;
+    @media ($bp-md) {
+        a {
+            &:hover,
+            &:focus {
+                background-color: #bbb;
+                .item {
+                    color: $PRIMARY !important;
+                }
             }
         }
     }

@@ -3,13 +3,25 @@ import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import Helmet from 'react-helmet'
 import config from "../../data/SiteConfig";
-
+/** Style **/
+import styled from 'styled-components';
+import * as palette from '../layouts/scss/variables'
 
 import * as PropTypes from "prop-types"
 
 const propTypes = {
     data: PropTypes.object.isRequired,
   }
+
+const ArticleItem = styled.div`
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 40px;
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+`
 
 
 class BloguePage extends React.Component {
@@ -18,19 +30,12 @@ class BloguePage extends React.Component {
 
         const ARTICLE = ({ node }) => (
           
-            <div>
+            <ArticleItem>
                 <h2>{node.title}</h2>
                 <p>{node.description}</p>
-                {/* <Img
-                  src={node.media.responsiveSizes.src}
-                  style={{ 
-                    margin: 0,
-                    }}
-                  sizes={node.media.responsiveSizes}
-                /> */}
                 <p>{node.createdAt}</p>
                 <Link to={`/blogue/${node.slug}/`}>lire l'article</Link>
-            </div>
+            </ArticleItem>
         )
           
         return(

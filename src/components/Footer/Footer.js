@@ -17,7 +17,6 @@ padding: 15px 15px 40px 15px;
 `;
 
 const Liens = styled.a`
-    font-size: 14px;
     text-decoration: underline
 `
 
@@ -30,12 +29,8 @@ class C_Footer extends React.Component {
         
         return(
             <Footer>
-              <p>test foooter</p>
-
-              <div className="technos">
-                <p>Ce site a été développé avec <Liens href="https://www.contentful.com/" rel="nofollow" target="_blank">Contentful</Liens>, <Liens href="https://www.netlify.com/" rel="nofollow" target="_blank">Netlify</Liens>, <Liens href="https://www.gatsbyjs.org/" rel="nofollow" target="_blank">Gatsby JS</Liens>, <Liens href="https://reactjs.org/" rel="nofollow" target="_blank">React JS</Liens> et <Liens href="https://github.com/" rel="nofollow" target="_blank">Github</Liens>
+              <p className={'typo__8'}>&copy;2018 - Massimo Russo | Site développé avec <Liens href="https://www.contentful.com/" rel="nofollow" target="_blank">Contentful</Liens>, <Liens href="https://www.netlify.com/" rel="nofollow" target="_blank">Netlify</Liens>, <Liens href="https://www.gatsbyjs.org/" rel="nofollow" target="_blank">Gatsby JS</Liens>, <Liens href="https://reactjs.org/" rel="nofollow" target="_blank">React JS</Liens> et <Liens href="https://github.com/" rel="nofollow" target="_blank">Github</Liens>
                 </p>       
-              </div>
                         
             </Footer>
         )

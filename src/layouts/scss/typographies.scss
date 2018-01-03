@@ -53,8 +53,7 @@
 
 // Texte bouton
 .typo__6 {
-    @include fluid(( "property": "font-size", $xs: 12px, $sm: 12px, $md: 13px, $lg: 13px, $xlg: 13px, $xxlg: 16px ));  
-    text-transform: uppercase;  
+    @include fluid(( "property": "font-size", $xs: 16px, $sm: 16px, $md: 16px, $lg: 18px, $xlg: 18px, $xxlg: 24px ));    
 } 
 
 // niveau 3 menu lateral

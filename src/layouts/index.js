@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components';
 import * as palette from '../layouts/scss/variables'
 import 'semantic-ui-css/semantic.css'
-import { Sidebar, Segment, Button, Menu, Image, Icon, Header } from 'semantic-ui-react'
+import { Sidebar, Segment, Button, Menu, Image, Icon, Header, Responsive } from 'semantic-ui-react'
 import './main.scss'
 /** Components **/
 import C_Footer from '../components/Footer/Footer'
@@ -69,27 +69,27 @@ export default class TemplateWrapper extends React.Component {
               <Sidebar as={Menu} animation='push' direction='top' visible={visible} inverted>
                 <div className="ui container">
                   <Link to="/" activeClassName={'active'} exact>
-                    <Menu.Item name='home' className={'typo__5'}>
+                    <Menu.Item name='home' className={'typo__6'}>
                       <Icon name='home' />
-                      Accueil
+                      <Responsive minWidth={640}>Accueil</Responsive>
                     </Menu.Item>
                   </Link>
                   <Link to="/realisations/" activeClassName={'active'} exact>
-                    <Menu.Item name='desktop' className={'typo__5'}>
+                    <Menu.Item name='desktop' className={'typo__6'}>
                       <Icon name='desktop' />
-                      Réalisations
+                      <Responsive minWidth={640}>Réalisations</Responsive>
                     </Menu.Item>
                   </Link>
                   <Link to="/blogue/" activeClassName={'active'} exact>
-                    <Menu.Item name='newspaper' className={'typo__5'}>
+                    <Menu.Item name='newspaper' className={'typo__6'}>
                       <Icon name='newspaper' />
-                      Blogue
+                      <Responsive minWidth={640}>Blogue</Responsive>
                     </Menu.Item>
                   </Link>
                   <Link to="/contact/" activeClassName={'active'} exact>
-                    <Menu.Item name='mail' className={'typo__5'}>
+                    <Menu.Item name='mail' className={'typo__6'}>
                       <Icon name='mail' />
-                      Contact
+                      <Responsive minWidth={640}>Contact</Responsive>
                     </Menu.Item>
                   </Link>
                 </div>

@@ -23,6 +23,10 @@ const WorkItem = styled.div`
   &:focus {
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
   }
+  .gatsby-image-outer-wrapper {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 `
 
 
@@ -82,7 +86,7 @@ export const pageWorksQuery = graphql`
 query PageWorksQuery {
   fr: allContentfulWorks(
       filter: { node_locale: { eq: "fr-CA" } } 
-      sort: {fields: [createdAt] order: DESC}
+      sort: {fields: [date] order: DESC}
       limit: 5 ){
     edges {
       node {

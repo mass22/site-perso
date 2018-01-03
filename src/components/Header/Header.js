@@ -17,18 +17,13 @@ class C_Header extends React.Component {
 
         return(
             <Header className={'ui full-width container'}>
-                <div
-                style={{
-                    margin: '0 auto',
-                    maxWidth: 1127,
-                    padding: '1.45rem 0',
-                }}
-                >
+                <div className={'header'}>
                     <Link
                     to="/"
                     style={{
                         color: 'white',
                         textDecoration: 'none',
+                        paddingLeft: 15
                     }}
                     >
                     <span className={'typo__0'}>Massimo Russo</span>
