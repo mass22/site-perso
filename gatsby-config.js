@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Massimo Russo`,
+    title: `Massimo Russo - Développeur Front-end`,
+    siteUrl: `https://www.russo-massimo.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,10 +16,19 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Pacifico:400`,
+          `arimo:400` // you can also specify font weights and styles
+        ]
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "GatsbyJS",
-        short_name: "GatsbyJS",
+        name: "Massimo Russo",
+        short_name: "Massimo Russo",
         start_url: "/",
         background_color: "#f7f0eb",
         theme_color: "#a2466c",
@@ -61,8 +71,13 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: `gatsby-plugin-sitemap`
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-netlify`,
+    //`gatsby-transformer-sharp`,
+    //Always last: Netlify
+    `gatsby-plugin-netlify`
   ],
 }

@@ -1,0 +1,122 @@
+
+// FLUID
+@mixin fluid($map) {
+    $xxs: 320px;
+    $xs: 540px;
+    $sm: 640px;
+    $md: 992px;
+    $lg: 1200px;
+    $xlg: 1920px;
+    $xxlg: 2880px;
+
+    $propertyValue: map-get($map, "property"); // width
+    $xsmallValue: map-get($map, $xs); // 200px
+    $smallValue: map-get($map, $sm); // 250px
+    $mediumValue: map-get($map, $md); // 300px
+    $largeValue: map-get($map, $lg); // 300px
+    $xlargeValue: map-get($map, $xlg); // 300px
+    $xxlargeValue: map-get($map, $xxlg); // 300px
+
+    $m-sm: ($mediumValue - $smallValue) / ($md - $sm); // ( 300px - 250px ) / ( 992px - 640px ) = 0.142045455
+    $b-sm: round($smallValue - $m-sm * $sm); // round( 250px - 0.142045455 )
+
+    $m-md: ($largeValue - $mediumValue) / ($lg - $md);
+    $b-md: round($mediumValue - $m-md * $md);
+
+    $m-lg: ($xlargeValue - $largeValue) / ($xlg - $lg);
+    $b-lg: round($largeValue - $m-lg * $lg);
+
+    $m-xlg: ($xxlargeValue - $xlargeValue) / ($xxlg - $xlg);
+    $b-xlg: round($xlargeValue - $m-xlg * $xlg);
+
+    $m-xxlg: ($xxlargeValue - $xlargeValue) / ($xxlg - $xlg);
+    $b-xxlg: round($xlargeValue - $m-xxlg * $xlg);
+
+    $sign-xxs: "+";
+    $sign-xs: "+";
+    $sign-sm: "+";
+    $sign-md: "+";
+    $sign-lg: "+";
+    $sign-xlg: "+";
+    $sign-xxlg: "+";
+
+    @if ($b-sm < 0) {
+        $sign-sm: "-";
+        $b-sm: abs($b-sm);
+    }
+
+    @if ($b-md < 0) {
+        $sign-md: "-";
+        $b-md: abs($b-md);
+    }
+
+    @if ($b-lg < 0) {
+        $sign-lg: "-";
+        $b-lg: abs($b-lg);
+    }
+
+    @if ($b-xlg < 0) {
+        $sign-xlg: "-";
+        $b-xlg: abs($b-xlg);
+    }
+
+    @if ($b-xxlg < 0) {
+        $sign-xxlg: "-";
+        $b-xxlg: abs($b-xxlg);
+    }
+
+    @if (type-of($xsmallValue) != string) {
+        $m-xxs: ($xsmallValue - $xsmallValue) / ($xs - $xxs);
+        $b-xxs: $xsmallValue - $m-xxs * $xxs;
+
+        $m-xs: ($smallValue - $xsmallValue) / ($sm - $xs);
+        $b-xs: $smallValue - $m-xs * $xs;
+
+        @if ($b-xs < 0) {
+            $sign-xs: "-";
+            $b-xs: abs($b-xs);
+        }
+
+        @if ($b-xxs < 0) {
+            $sign-xxs: "-";
+            $b-xxs: abs($b-xxs);
+        }
+
+        #{$propertyValue}: calc(#{$m-xxs*100}vw #{$sign-xxs} #{$b-xxs});
+
+        @media(min-width: $xs) {
+            #{$propertyValue}: calc(#{$m-xs*100}vw #{$sign-xs} #{$b-xs});
+        }
+    }
+    @else {
+        #{$propertyValue}: #{$xsmallValue};
+
+        @media(min-width: $xxs) {
+            #{$propertyValue}: #{$xsmallValue};
+        }
+
+        @media(min-width: $xs) {
+            #{$propertyValue}: #{$xsmallValue};
+        }
+    }
+
+    @media(min-width: $sm) {
+        #{$propertyValue}: calc(#{$m-sm*100}vw #{$sign-sm} #{$b-sm});
+    }
+
+    @media(min-width: $md) {
+        #{$propertyValue}: calc(#{$m-md*100}vw #{$sign-md} #{$b-md});
+    }
+
+    @media(min-width: $lg) {
+        #{$propertyValue}: calc(#{$m-lg*100}vw #{$sign-lg} #{$b-lg});
+    }
+
+    @media(min-width: $xlg) {
+        #{$propertyValue}: calc(#{$m-xlg*100}vw #{$sign-xlg} #{$b-xlg});
+    }
+
+    @media(min-width: $xxlg) {
+        #{$propertyValue}: calc( #{$xxlargeValue} #{$sign-xxlg} 0.1vw);
+    }
+}

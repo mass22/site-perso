@@ -1,0 +1,2 @@
+webpackJsonp([0x81b8806e4260],{685:function(e,n){e.exports={data:{fr:{edges:[{node:{id:"c1PVFg58DPyeU8osEC04aQQ",name:"Massimo Russo | Développeur Front-end",content:{content:"Ma super présentation"}}}]}},pathContext:{}}}});
+//# sourceMappingURL=path---index-160c94efaa7bec46e2b7.js.map

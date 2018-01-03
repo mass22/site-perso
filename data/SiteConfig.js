@@ -1,6 +1,6 @@
 module.exports = {
     //blogPostDir: "sample-posts", // The name of directory that contains your posts.
-    siteTitle: "Massimo Russo - Front-end developer", // Site title.
+    siteTitle: "Massimo Russo - Développeur Front-end", // Site title.
     //siteTitleAlt: "GatsbyJS Advanced Starter", // Alternative site title for SEO.
    // siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
    // siteUrl: "https://vagr9k.github.io", // Domain of your website without pathPrefix.

@@ -1,0 +1,140 @@
+.typo__0,
+.typo__1,
+.typo__2,
+.typo__3,
+.typo__4,
+.typo__5,
+.typo__6,
+.typo__7,
+.typo__8,
+.typo__9,
+.typo__10,
+.typo__11 {
+    line-height: 1.4;
+    font-weight: 100;
+    font-family: $FontSite;
+}
+
+//Site title
+.typo__0 {
+    @include fluid(( "property": "font-size", $xs: 36px, $sm: 40px, $md: 52px, $lg: 64px, $xlg: 64px, $xxlg: 96px ));
+    @include fluid(( "property": "line-height", $xs: 36px, $sm: 40px, $md: 52px, $lg: 64px, $xlg: 64px, $xxlg: 96px ));
+    font-family: 'pacifico';
+}
+
+// H1
+.typo__1 {
+    @include fluid(( "property": "font-size", $xs: 36px, $sm: 40px, $md: 52px, $lg: 64px, $xlg: 64px, $xxlg: 96px ));
+    @include fluid(( "property": "line-height", $xs: 36px, $sm: 40px, $md: 52px, $lg: 64px, $xlg: 64px, $xxlg: 96px ));
+}
+
+// Chapeau au H1, H2
+.typo__2 {
+    @include fluid(( "property": "font-size", $xs: 24px, $sm: 24px, $md: 32px, $lg: 40px, $xlg: 40px, $xxlg: 62px ));
+    @include fluid(( "property": "line-height", $xs: 30px, $sm: 30px, $md: 38px, $lg: 48px, $xlg: 48px, $xxlg: 68px ));
+}
+  
+// Chapeau au H2
+.typo__3 {
+    @include fluid(( "property": "font-size", $xs: 18px, $sm: 18px, $md: 24px, $lg: 24px, $xlg: 24px, $xxlg: 40px ));
+    @include fluid(( "property": "line-height", $xs: 22px, $sm: 22px, $md: 32px, $lg: 32px, $xlg: 32px, $xxlg: 45px ));
+}
+ 
+// H3
+.typo__4 {
+    @include fluid(( "property": "font-size", $xs: 16px, $sm: 18px, $md: 21px, $lg: 21px, $xlg: 21px, $xxlg: 28px ));  
+}
+
+// Texte normale, p
+.typo__5 {
+    @include fluid(( "property": "font-size", $xs: 14px, $sm: 16px, $md: 16px, $lg: 18px, $xlg: 18px, $xxlg: 24px ));
+    @include fluid(( "property": "line-height", $xs: 22px, $sm: 25px, $md: 25px, $lg: 30px, $xlg: 30px, $xxlg: 36px ));
+}
+
+// Texte bouton
+.typo__6 {
+    @include fluid(( "property": "font-size", $xs: 12px, $sm: 12px, $md: 13px, $lg: 13px, $xlg: 13px, $xxlg: 16px ));  
+    text-transform: uppercase;  
+} 
+
+// niveau 3 menu lateral
+.typo__7 {
+    @include fluid(( "property": "font-size", $xs: 13px, $sm: 13px, $md: 14px, $lg: 14px, $xlg: 14px, $xxlg: 16px )); 
+}
+
+// niveau 1 menu lateral
+.typo__8 {
+    @include fluid(( "property": "font-size", $xs: 16px, $sm: 16px, $md: 18px, $lg: 18px, $xlg: 18px, $xxlg: 21px ));
+}
+
+// .f__title
+.typo__9 {
+    @include fluid(( "property": "font-size", $xs: 12px, $sm: 12px, $md: 13px, $lg: 13px, $xlg: 13px, $xxlg: 16px ));
+    text-transform: uppercase;
+}
+
+// .f__question
+.typo__10 {
+    @include fluid(( "property": "font-size", $xs: 16px, $sm: 16px, $md: 21px, $lg: 21px, $xlg: 21px, $xxlg: 28px ));
+}
+
+// .calculator
+.typo__11 {
+    @include fluid(( "property": "font-size", $xs: 16px, $sm: 18px, $md: 21px, $lg: 21px, $xlg: 21px, $xxlg: 28px ));
+}
+
+// note legal
+.typo__12 {
+    @include fluid(( "property": "font-size", $xs: 13px, $sm: 13px, $md: 13px, $lg: 13px, $xlg: 13px, $xxlg: 16px ));
+    @include fluid(( "property": "line-height", $xs: 21px, $sm: 21px, $md: 21px, $lg: 21px, $xlg: 21px, $xxlg: 24px ));
+}
+
+// note legal title
+.typo__13 {
+    @include fluid(( "property": "font-size", $xs: 13px, $sm: 13px, $md: 13px, $lg: 13px, $xlg: 13px, $xxlg: 16px ));
+}
+
+// titre - bloc + Menu lateral niveau 2
+.typo__14 {
+    @include fluid(( "property": "font-size", $xs: 14px, $sm: 14px, $md: 16px, $lg: 16px, $xlg: 16px, $xxlg: 18px ));
+} 
+
+// phone number gradient
+.typo__15 {
+    @include fluid(( "property": "font-size", $xs: 24px, $sm: 24px, $md: 32px, $lg: 40px, $xlg: 40px, $xxlg: 62px ));
+    @include fluid(( "property": "line-height", $xs: 30px, $sm: 30px, $md: 38px, $lg: 48px, $xlg: 48px, $xxlg: 68px ));
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: transparent;
+    color: transparent;
+    
+}
+
+// Number carousel
+.typo__16 {
+    @include fluid(( "property": "font-size", $xs: 48px, $sm: 48px, $md: 120px, $lg: 120px, $xlg: 180px, $xxlg: 180px ));
+} 
+
+// Number List .bn__number
+.typo__17 {
+    @include fluid(( "property": "font-size", $xs: 120px, $sm: 120px, $md: 120px, $lg: 120px, $xlg: 180px, $xxlg: 180px )); 
+}
+
+// H3 carousel--full-height
+.typo__18 {
+    @include fluid(( "property": "font-size", $xs: 24px, $sm: 24px, $md: 32px, $lg: 40px, $xlg: 40px, $xxlg: 62px ));
+    @include fluid(( "property": "line-height", $xs: 30px, $sm: 30px, $md: 38px, $lg: 48px, $xlg: 48px, $xxlg: 68px ));
+}
+
+// Texte normale plus en 4K, carousel--full-height
+.typo__19 {
+    @include fluid(( "property": "font-size", $xs: 14px, $sm: 14px, $md: 16px, $lg: 21px, $xlg: 26px, $xxlg: 30px ));
+    @include fluid(( "property": "line-height", $xs: 22px, $sm: 22px, $md: 26px, $lg: 32px, $xlg: 40px, $xxlg: 50px ));
+}
+
+// h4
+.typo__20 {
+    @include fluid(( "property": "font-size", $xs: 15px, $sm: 16px, $md: 18px, $lg: 18px, $xlg: 18px, $xxlg: 21px ));
+} 

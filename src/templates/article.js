@@ -28,19 +28,22 @@ class ArticleTemplate extends React.Component {
               <Helmet>
                 <title>{`${title} | ${config.siteTitle}`}</title>
               </Helmet>
+              <div>
+                <Link to="/blogue/">Go to blogue</Link>
+              </div>
 
-                <h1>{title}</h1>
-                <Img
-                  src={media.sizes.src}
-                  style={{ 
-                    margin: 0
-                    }}
-                  sizes={media.sizes}
-                  alt={media.title}
-                />
-                <b>{description}</b>
-                <i>{createdAt}</i>
-                <p>{content}</p>
+              <h1>{title}</h1>
+              {/* <Img
+                src={media.sizes.src}
+                style={{ 
+                  margin: 0
+                  }}
+                sizes={media.sizes}
+                alt={media.title}
+              /> */}
+              <b>{description}</b>
+              <i>{createdAt}</i>
+              <p>{content}</p>
             </div>
         )
       }

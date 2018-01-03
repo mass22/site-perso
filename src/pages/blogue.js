@@ -21,13 +21,13 @@ class BloguePage extends React.Component {
             <div>
                 <h2>{node.title}</h2>
                 <p>{node.description}</p>
-                <Img
-                  src={node.media.sizes.src}
+                {/* <Img
+                  src={node.media.responsiveSizes.src}
                   style={{ 
                     margin: 0,
                     }}
-                  sizes={node.media.sizes}
-                />
+                  sizes={node.media.responsiveSizes}
+                /> */}
                 <p>{node.createdAt}</p>
                 <Link to={`/blogue/${node.slug}/`}>lire l'article</Link>
             </div>
@@ -40,10 +40,7 @@ class BloguePage extends React.Component {
                   <title>{`Blogue | ${config.siteTitle}`}</title>
                 </Helmet>
 
-                <h1>Hi from the Blogue</h1>
-                <p>Welcome to Blogue</p>
-                <Link to="/">Go back to the Homepage</Link>
-                <hr/>
+                <h1>Blogue</h1>
 
                 {frArticles.map(({ node }, i) => (
                   <ARTICLE node={node} key={node.id} />
@@ -72,7 +69,7 @@ query PageBlogueQuery {
         slug
         createdAt(formatString: "DD MMM, YYYY") 
         media {
-          sizes(maxWidth: 100) {
+          responsiveSizes {
             base64
             aspectRatio
             src

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import * as PropTypes from "prop-types"
+import Helmet from 'react-helmet'
+import config from "../../data/SiteConfig";
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -14,14 +16,9 @@ class IndexPage extends React.Component {
 
     return (
       <div>
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
-        <br/>
-        <Link to="/blogue/">Go to blogue</Link>
-        <br/>
-        <Link to="/works/">Go to works</Link>
+        <Helmet>
+          <title>{config.siteTitle}</title>
+        </Helmet>
         <h1>
         {frHomepage.node.name}
         </h1>
@@ -39,7 +36,9 @@ export default IndexPage
 
 export const pageQuery = graphql`
 query PageQuery {
-  fr: allContentfulHomepage(filter: { node_locale: { eq: "fr-CA" } }) {
+  fr: allContentfulHomepage(
+    filter: { node_locale: { eq: "fr-CA" } }
+  ) {
     edges {
       node {
         id 
