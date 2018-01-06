@@ -13,7 +13,7 @@ const propTypes = {
     data: PropTypes.object.isRequired,
   }
 
-const ArticleItem = styled.div`
+const ArticleItem = styled.article`
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 40px;

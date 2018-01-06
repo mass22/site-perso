@@ -19,22 +19,34 @@ $FontSiteName: 'Pacifico';
 $FontSite: 'Arimo';
 
 // COLORS
-$PRIMARY : #1b1b1b;
-$P_LIGHT : #424242;
-$P_DARK : #000000;
-$B_TYPO : #ffffff;
 
-$SECONDARY : #0d47a1;
-$S_DARK : #002171;
-$S_LIGHT : #5472d3;
-$S_LIGHT_TYPO : #000000;
+$black: #1b1b1b;
+$blue: #0d47a1;
+$flash-blue: #0096FF;
+$turquoise: #aed5ed;
+$white: #ffffff;
 
-$THIRD : #ff6d00;
-$T_DARK : #c43c00;
-$T_LIGHT : #ff9e40;
-$T_TYPO : #000000;
-$T_DARK_TYPO : #ffffff;
+$brown: #8d6e63;
+$light-brown: #be9c91;
+$dark-brown: #5f4339;
 
-$BG_MAIN : #ffffff;
+$orange : #ff6d00;
+$dark-orange : #c43c00;
+$light-orange : #ff9e40;
+
+
+$primary : $black;
+$light-primary : #424242;
+$dark-primary : $black;
+$typo-primary : $white;
+
+
+$secondary : $blue;
+$dark-secondary : #002171;
+$light-secondary : #5472d3;
+$typo-secondary : $black;
+
+
+$BG_MAIN : $white;
 
 $shadow : #e2e2e2;

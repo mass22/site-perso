@@ -4,6 +4,12 @@ export const P_LIGHT = '#424242'
 export const P_DARK = '#000000'
 export const B_TYPO = '#ffffff'
 
+export const TURQUOISE = '#aed5ed'
+
+export const BROWN = '#8d6e63'
+export const LIGHT_BROWN = '#be9c91'
+export const DARK_BROWN = '#5f4339'
+
 export const SECONDARY = '#0d47a1'
 export const S_DARK = '#002171'
 export const S_LIGHT = '#5472d3'

@@ -1,7 +1,9 @@
 @import './scss/variablesSass';
-@import './scss/hamburger';
 @import './scss/mixins';
 @import './scss/typographies';
+@import './scss/hamburger';
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 body {
     background-color: #bbb;
@@ -48,8 +50,6 @@ li {
     @extend .typo__5;
 }
 
-
-
 .ui.segment {
     box-shadow: none;
     border-radius: 0;
@@ -59,55 +59,58 @@ li {
     padding: 0;
 }
 
-.ui.button {
-    background-color: transparent;
-    position: absolute;
-    @include fluid(( "property": "top", $xs: 14px, $sm: 16px, $md: 16px, $lg: 25px, $xlg: 30px, $xxlg: 40px ));
-    @include fluid(( "property": "right", $xs: 14px, $sm: 16px, $md: 16px, $lg: 25px, $xlg: 25px, $xxlg: 25px ));
-    &:hover,
-    &:focus {
-        background-color: transparent;
-    }
-}
 
-.ui.full-width.container {
-    .header {
+.header {
+    .ui.full-width.container {
         margin: 0 auto;
         padding: 1.45rem 0;
         max-width: 100% !important;
-        @media only screen and (max-width: 767px) {
-            width: auto !important;
-        }
-        @media only screen and (min-width: 768px) and (max-width: 991px) {
-            width: 723px !important;
-        }
-        @media only screen and (min-width: 992px) and (max-width: 1199px) {
-            width: 933px !important;
-        }
-        @media only screen and (min-width: 1200px) {
-            width: 1127px !important;
+        width: 100%;
+        a {
+            margin: auto;
+            display: block;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
             
+            @media only screen and (max-width: 767px) {
+                width: auto !important;
+            }
+            @media only screen and (min-width: 768px) and (max-width: 991px) {
+                width: 723px !important;
+            }
+            @media only screen and (min-width: 992px) and (max-width: 1199px) {
+                width: 933px !important;
+            }
+            @media only screen and (min-width: 1200px) {
+                width: 1127px !important;
+                
+            }
         }
     }
 }
 
 .active {
-    background-color: $THIRD;
+    background-color: $flash-blue;
     .item {
-        color: $PRIMARY !important;
+        color: $black !important;
         font-weight: bold !important;  
     }
 }
 .menu {
-    @media ($bp-md) {
+    @media ($bp-sm) {
         a {
-            &:hover,
-            &:focus {
-                background-color: #bbb;
+            &:hover {
+                background-color: $light-orange;
                 .item {
-                    color: $PRIMARY !important;
+                    color: $black !important;
                 }
             }
         }
     }
+}
+
+.slick-arrow.slick-next,
+.slick-arrow.slick-prev {
+    display: none;
 }
