@@ -11,7 +11,7 @@ const Header = styled.section`
   font-size: 1.5em;
   background-color: ${palette.PRIMARY};
   color: ${palette.S_TYPO};
-  border-bottom: ${palette.TURQUOISE} 4px solid;
+  border-bottom: ${palette.FLASH_BLUE} 4px solid;
   position: relative;
   `;
   

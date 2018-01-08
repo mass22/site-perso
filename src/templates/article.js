@@ -19,7 +19,9 @@ class ArticleTemplate extends React.Component {
         description,
         content : {content},
         createdAt,
-        media
+        media,
+        author : {name},
+        author : {bio}
       } = article
 
       const metaTitle = {title}
@@ -29,7 +31,7 @@ class ArticleTemplate extends React.Component {
                 <title>{`${title} | ${config.siteTitle}`}</title>
               </Helmet>
               <div>
-                <Link to="/blogue/">Go to blogue</Link>
+                <Link to="/blogue/">Retour</Link>
               </div>
 
               <h1>{title}</h1>
@@ -44,6 +46,11 @@ class ArticleTemplate extends React.Component {
               <b>{description}</b>
               <i>{createdAt}</i>
               <p>{content}</p>
+              <hr/>
+              <div>
+              <p>{name}</p>
+                <Link to="/blogue/">Retour</Link>
+              </div>
             </div>
         )
       }
@@ -73,6 +80,11 @@ query articleQuery($id: String!) {
         srcSet
         sizes
       }
+    }
+    author {
+      id
+      name
+      bio
     }
   }
 }

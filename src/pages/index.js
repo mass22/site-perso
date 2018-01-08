@@ -14,8 +14,8 @@ const propTypes = {
 }
 
 const Recommandation = styled.article`
-    border-top: 2px solid #e2e2e2;
-    border-bottom: 2px solid #e2e2e2;
+    border-top: 2px solid ${palette.BROWN};
+    border-bottom: 2px solid ${palette.BROWN};
     padding: 40px;
 `
 
@@ -31,7 +31,8 @@ class IndexPage extends React.Component {
       slidesToScroll: 1,
       swipeToSlide: true,
       autoplay: true,
-      autoplaySpeed: 5000
+      autoplaySpeed: 7000,
+      speed: 3000
     };
     
     const frHomepage = this.props.data.fr.edges[0]
@@ -43,7 +44,7 @@ class IndexPage extends React.Component {
         <p>
         {frHomepage.node.content.content}
         </p>
-
+        <h2>Ils ont dit...</h2>
         <Slider {...settings}>
         {[frHomepage.node.recommandations.map((recommandation, i) =>(
           <Recommandation>
@@ -78,7 +79,7 @@ class IndexPage extends React.Component {
         
 
         <HOMEPAGE />
-
+        <a>{config.userLinks}</a>
       </div>
     )
   }

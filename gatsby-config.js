@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Massimo Russo - Développeur Front-end`,
     siteUrl: `https://www.russo-massimo.com`,
-    image_url: `${config.siteUrl + pathPrefix}/logos/logo-512.png`,
+    image_url: `${config.siteUrl + pathPrefix}/logos/logo.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
