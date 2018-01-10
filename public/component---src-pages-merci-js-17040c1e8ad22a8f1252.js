@@ -1,0 +1,2 @@
+webpackJsonp([41960158050626],{820:function(e,t,l){"use strict";function u(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0;var a=l(2),n=u(a),r=l(184),d=u(r);t.default=function(){return n.default.createElement("div",null,n.default.createElement("h1",null,"Merci !"),n.default.createElement("p",null,"Votre message a bien été envoyé. Je vous répondrai dans les meilleurs délais"),n.default.createElement(d.default,{to:"/"},"Retour à la page d'accueil"))},e.exports=t.default}});
+//# sourceMappingURL=component---src-pages-merci-js-17040c1e8ad22a8f1252.js.map
