@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import Helmet from 'react-helmet'
 import config from "../../data/SiteConfig";
-
+import { Form, Input, TextArea, Button } from 'semantic-ui-react'
 
 import * as PropTypes from "prop-types"
 
@@ -44,7 +44,10 @@ class ContactPage extends React.Component {
 
             <div>
                 <h1>Contact</h1>
-                <form
+                <p>
+                    Vous avez un projet ? Une idée? Une offre d'emploi ? Ou simplement me demander comment ça va ? N'hésitez pas à m'envoyer un courriel !
+                </p>
+                <Form
                 name="contact"
                 method="post"
                 action="/merci/"
@@ -57,28 +60,15 @@ class ContactPage extends React.Component {
                         Don’t fill this out: <input name="bot-field" />
                         </label>
                     </p>
-                    <p>
-                        <label>
-                        Votre nom:<br />
-                        <input type="text" name="name" onChange={this.handleChange}/>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                        Votre email:<br />
-                        <input type="email" name="email" onChange={this.handleChange}/>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                        Message:<br />
-                        <textarea name="message" onChange={this.handleChange}/>
-                        </label>
-                    </p>
-                    <p>
-                        <button type="submit">Envoyer</button>
-                    </p>
-                </form>
+
+                    <Form.Group widths='equal'>
+                        <Form.Field id='form-input-control-first-name' control={Input} label='Votre nom' placeholder='John Doe' onChange={this.handleChange} />
+                        <Form.Field id='form-input-control-email' control={Input} label='Votre email:' placeholder='jdoe@company.com' onChange={this.handleChange} />
+                    </Form.Group>
+                    <Form.Field id='form-textarea-control-opinion' control={TextArea} label='Message:' placeholder="Bonjour, j'ai un job pour toi !" onChange={this.handleChange} />
+                    <Form.Field id='form-button-control-public' control={Button} content='Envoyer' inverted color='#8d6e63' />
+
+                </Form>
             </div>
         )
     }

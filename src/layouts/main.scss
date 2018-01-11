@@ -61,33 +61,65 @@ li {
 
 
 .header {
-    .ui.full-width.container {
+    .container-full-width {
         margin: 0 auto;
         padding: 1.45rem 0;
-        max-width: 100% !important;
+        max-width: 100%;
         width: 100%;
-        a {
-            margin: auto;
+        a {        
+            margin: auto 1em;
             display: block;
             padding-left: 0;
             display: flex;
             align-items: center;
             
             @media only screen and (max-width: 767px) {
-                width: auto !important;
+                width: auto;
             }
             @media only screen and (min-width: 768px) and (max-width: 991px) {
-                width: 723px !important;
+                width: 723px;
+                margin: auto;
             }
             @media only screen and (min-width: 992px) and (max-width: 1199px) {
-                width: 933px !important;
+                width: 933px;
             }
             @media only screen and (min-width: 1200px) {
-                width: 1127px !important;
+                width: 1127px;
                 
             }
         }
     }
+}
+
+footer {
+    &.container-full-width {
+        padding: 1.45rem 0 3rem;
+        max-width: 100%;
+        width: 100%;
+        
+        div {
+            margin: auto;
+            display: block;
+            margin: auto 1em;
+            
+            @media only screen and (max-width: 767px) {
+                width: auto;
+            }
+            @media only screen and (min-width: 768px) and (max-width: 991px) {
+                width: 723px;
+                margin: auto;
+            }
+            @media only screen and (min-width: 992px) and (max-width: 1199px) {
+                width: 933px;
+                margin: auto;
+            }
+            @media only screen and (min-width: 1200px) {
+                width: 1127px;
+                margin: auto;
+            }
+        }
+    }
+
 }
 
 .active {

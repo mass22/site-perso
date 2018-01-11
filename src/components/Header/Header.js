@@ -25,7 +25,7 @@ class C_Header extends React.Component {
     render () {
 
         return(
-            <Header className={'ui full-width container'}>
+            <Header className={'container-full-width'}>
                     <Link
                     to="/"
                     style={{

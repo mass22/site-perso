@@ -49,6 +49,7 @@ class ArticleTemplate extends React.Component {
               <hr/>
               <div>
               <p>{name}</p>
+              <p>{bio}</p>
                 <Link to="/blogue/">Retour</Link>
               </div>
             </div>
