@@ -62,11 +62,11 @@ class ContactPage extends React.Component {
                     </p>
 
                     <Form.Group widths='equal'>
-                        <Form.Field id='form-input-control-first-name' control={Input} label='Votre nom' placeholder='John Doe' onChange={this.handleChange} />
-                        <Form.Field id='form-input-control-email' control={Input} label='Votre email:' placeholder='jdoe@company.com' onChange={this.handleChange} />
+                        <Form.Field id='form-input-control-first-name' control={Input} label='Votre nom' placeholder='John Doe' onChange={this.handleChange} required />
+                        <Form.Field id='form-input-control-email' control={Input} label='Votre email:' placeholder='jdoe@company.com' onChange={this.handleChange} required />
                     </Form.Group>
-                    <Form.Field id='form-textarea-control-opinion' control={TextArea} label='Message:' placeholder="Bonjour, j'ai un job pour toi !" onChange={this.handleChange} />
-                    <Form.Field id='form-button-control-public' control={Button} content='Envoyer' inverted color='#8d6e63' />
+                    <Form.Field id='form-textarea-control-opinion' control={TextArea} label='Message:' placeholder="Bonjour, j'ai un job pour toi !" onChange={this.handleChange} required />
+                    <Form.Field id='form-button-control-public' control={Button} content='Envoyer' inverted color='brown' />
 
                 </Form>
             </div>
