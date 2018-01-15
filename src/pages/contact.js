@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import Helmet from 'react-helmet'
 import config from "../../data/SiteConfig";
-import { Form, Input, TextArea, Button } from 'semantic-ui-react'
+import { Form, Input, TextArea, Button, Container } from 'semantic-ui-react'
 
 import * as PropTypes from "prop-types"
 
@@ -34,7 +34,7 @@ class ContactPage extends React.Component {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: encode({ "form-name": "contact", ...this.state })
         })
-          .then(() => alert("Message envoyé!"))
+          .then(() => console.log("message envoyé !"))
           .catch(error => alert(error));
       };
 
@@ -42,7 +42,7 @@ class ContactPage extends React.Component {
          
         return(
 
-            <div>
+            <Container>
                 <h1>Contact</h1>
                 <p>
                     Vous avez un projet ? Une idée? Une offre d'emploi ? Ou simplement me demander comment ça va ? N'hésitez pas à m'envoyer un courriel !
@@ -63,13 +63,13 @@ class ContactPage extends React.Component {
 
                     <Form.Group widths='equal'>
                         <Form.Field id='form-input-control-first-name' control={Input} label='Votre nom' placeholder='John Doe' onChange={this.handleChange} required />
-                        <Form.Field id='form-input-control-email' control={Input} label='Votre email:' placeholder='jdoe@company.com' onChange={this.handleChange} required />
+                        <Form.Field id='form-input-control-email' control={Input} label='Votre email:' placeholder='jdoe@company.com' onChange={this.handleChange} type="email" required />
                     </Form.Group>
                     <Form.Field id='form-textarea-control-opinion' control={TextArea} label='Message:' placeholder="Bonjour, j'ai un job pour toi !" onChange={this.handleChange} required />
-                    <Form.Field id='form-button-control-public' control={Button} content='Envoyer' inverted color='brown' />
+                    <Form.Field id='form-button-control-public' control={Button} content='Envoyer' icon='send' />
 
                 </Form>
-            </div>
+            </Container>
         )
     }
 }

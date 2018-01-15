@@ -20,9 +20,7 @@ const propTypes = {
 
 /** Styled Components **/
 const Main_Container = styled.div`
-  background-color: ${palette.BG_MAIN};
-  padding-top: 40px;
-  padding-bottom: 40px;
+ // background-color: ${palette.BG_MAIN};
 `;
 
 const HeaderContainer = styled.header`
@@ -108,7 +106,7 @@ export default class TemplateWrapper extends React.Component {
               </Sidebar>
               <Sidebar.Pusher onClick={(event) => {this.closeVisibility(); this.closeBurger()}}>
                   <Segment basic>
-                    <Main_Container className={'ui container'}>
+                    <Main_Container className={'ui container fluid'}>
                         {children()}
                     </Main_Container>
                     <C_Footer />
@@ -122,5 +120,4 @@ export default class TemplateWrapper extends React.Component {
           }
       }
     }
-
 

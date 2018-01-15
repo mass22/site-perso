@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import styled from 'styled-components';
 import * as palette from '../../layouts/scss/variables'
-import { Responsive } from 'semantic-ui-react'
+import { Responsive, Button, Icon, Container } from 'semantic-ui-react'
 
 
 const Header = styled.section`
@@ -13,11 +13,16 @@ const Header = styled.section`
   color: ${palette.S_TYPO};
   border-bottom: ${palette.FLASH_BLUE} 4px solid;
   position: relative;
+  a {
+    display: flex;
+    align-items: center;
+  }
   `;
   
 const ImgLogo = styled.img`
     max-width: 80px;
     margin-right: 20px;
+    padding: 1.45rem 0;
 `
 
 class C_Header extends React.Component {
@@ -25,7 +30,8 @@ class C_Header extends React.Component {
     render () {
 
         return(
-            <Header className={'container-full-width'}>
+            <Header className={'ui fluid container'}>
+                <Container>
                     <Link
                     to="/"
                     style={{
@@ -38,6 +44,7 @@ class C_Header extends React.Component {
                     </Responsive>
                     <span className={'typo__0'}>Massimo Russo</span>
                     </Link>
+                </Container>
             </Header>
         )
     }

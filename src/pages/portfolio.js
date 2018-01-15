@@ -7,7 +7,7 @@ import * as PropTypes from "prop-types"
 /** Style **/
 import styled from 'styled-components';
 import * as palette from '../layouts/scss/variables'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Button, Icon, Modal, Header, Container } from 'semantic-ui-react'
 
 
 const WorkItem = styled.div`
@@ -109,19 +109,40 @@ class WorksPage extends React.Component {
                 <Description>{node.description.description}</Description>
                 <p className={'typo__7'}>Employeur:<Company> {node.company}</Company></p>
               </WorkTop>
-              <WorkBottom>
-                <ExtLink href={node.link} target="_blank">Voir le site</ExtLink>
+              <WorkBottom>                
                 <Category>{node.category.name}</Category>
                 {[node.tags.map((tag, i) =>(
                      <Tags>{`${tag.name}  `}</Tags>
                   ))]}  
               </ WorkBottom>
+              <Modal trigger={<Button>Voir plus</Button>} closeIcon>
+                <Modal.Header>{node.name}</Modal.Header>
+                <Modal.Content>
+                  <Modal.Description>
+                    <Header>Employeur: {node.company}</Header>
+                    {[node.media.map((image, i) =>(
+                      <Img
+                      src={image.sizes.src}
+                      style={{ 
+                        margin: 0,
+                        height: 450
+                      }}
+                      sizes={image.sizes}
+                      className={'worksImg'}
+                      />
+                    ))]}
+                    <Button basic as={'a'} href={node.link} target="_blank">
+                      <Icon name='world' /> Voir le site
+                    </Button>
+                  </Modal.Description>
+                </Modal.Content>
+              </Modal>
             </WorkItem>
           
         )
           
         return(
-            <div>
+            <Container>
               <Helmet>
                 <title>{`Portfolio | ${config.siteTitle}`}</title>
               </Helmet>
@@ -133,7 +154,7 @@ class WorksPage extends React.Component {
                   </Grid.Column>
                 ))}
               </Grid>
-            </div>
+            </Container>
         )
     }
 }

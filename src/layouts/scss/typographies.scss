@@ -17,8 +17,8 @@
 
 //Site title
 .typo__0 {
-    @include fluid(( "property": "font-size", $xs: 26px, $sm: 40px, $md: 52px, $lg: 64px, $xlg: 64px, $xxlg: 96px ));
-    @include fluid(( "property": "line-height", $xs: 26px, $sm: 40px, $md: 52px, $lg: 64px, $xlg: 64px, $xxlg: 96px ));
+    @include fluid(( "property": "font-size", $xs: 20px, $sm: 34px, $md: 46px, $lg: 58px, $xlg: 58px, $xxlg: 86px ));
+   // @include fluid(( "property": "line-height", $xs: 20px, $sm: 34px, $md: 46px, $lg: 58px, $xlg: 58px, $xxlg: 86px ));
     font-family: 'pacifico';
 }
 

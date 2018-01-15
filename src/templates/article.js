@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import Helmet from 'react-helmet'
 import config from "../../data/SiteConfig";
+import { Button, Icon, Container } from 'semantic-ui-react'
 
 import * as PropTypes from "prop-types"
 
@@ -26,13 +27,10 @@ class ArticleTemplate extends React.Component {
 
       const metaTitle = {title}
         return ( 
-            <div>
+            <Container>
               <Helmet>
                 <title>{`${title} | ${config.siteTitle}`}</title>
               </Helmet>
-              <div>
-                <Link to="/blogue/">Retour</Link>
-              </div>
 
               <h1>{title}</h1>
               {/* <Img
@@ -50,9 +48,11 @@ class ArticleTemplate extends React.Component {
               <div>
               <p>{name}</p>
               <p>{bio}</p>
-                <Link to="/blogue/">Retour</Link>
+              <Button basic as={Link} to="/blogue/">
+                <Icon name='long arrow left' /> Retour
+              </Button>
               </div>
-            </div>
+            </Container>
         )
       }
     }

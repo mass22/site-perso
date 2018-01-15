@@ -2,10 +2,11 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Img from "gatsby-image"
 import Helmet from 'react-helmet'
-import config from "../../data/SiteConfig";
+import config from "../../data/SiteConfig"
 /** Style **/
-import styled from 'styled-components';
+import styled from 'styled-components'
 import * as palette from '../layouts/scss/variables'
+import { Button, Icon, Container } from 'semantic-ui-react'
 
 import * as PropTypes from "prop-types"
 
@@ -34,13 +35,13 @@ class BloguePage extends React.Component {
                 <h2>{node.title}</h2>
                 <p>{node.description}</p>
                 <p>{node.createdAt}</p>
-                <Link to={`/blogue/${node.slug}/`}>lire l'article</Link>
+                <Button as={Link} to={`/blogue/${node.slug}/`}>lire l'article</Button>
             </ArticleItem>
         )
           
         return(
 
-            <div>
+            <Container>
                 <Helmet>
                   <title>{`Blogue | ${config.siteTitle}`}</title>
                 </Helmet>
@@ -50,7 +51,7 @@ class BloguePage extends React.Component {
                 {frArticles.map(({ node }, i) => (
                   <ARTICLE node={node} key={node.id} />
                 ))}
-            </div>
+            </Container>
         )
     }
 }
