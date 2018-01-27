@@ -1,0 +1,2 @@
+webpackJsonp([0x81b8806e4260],{701:function(t,n){t.exports={data:{fr:{edges:[{node:{id:"c1PVFg58DPyeU8osEC04aQQ",name:"Développeur Front-end",content:{content:"Ma super présentation"},recommandations:[{id:"c20XC2MCrlmiCGmsWUU02Me",author:"Massimo",content:{content:"Always on top"},link:"https://www.russo-massimo.com"},{id:"jInn5O2jv2oKGISaya2WO",author:"Fedepet",content:{content:"Simply the best !"},link:"http://www.google.com"}]}}]}},pathContext:{}}}});
+//# sourceMappingURL=path---index-7d99df9680e2e110b0c9.js.map

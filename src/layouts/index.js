@@ -66,15 +66,7 @@ export default class TemplateWrapper extends React.Component {
                   htmlAttributes={{
                     lang: 'fr-CA',
                   }}
-                  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-                  <script>
-                    var OneSignal = window.OneSignal || [];
-                    OneSignal.push(function() {
-                      OneSignal.init({
-                        appId: "c8d5d2c0-c2d6-47f6-8e0f-70f06b1bde7d",
-                      });
-                    });
-                  </script>
+                 
               />
               <HeaderContainer className={'header'}>
                 <C_Header />

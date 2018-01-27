@@ -38,6 +38,8 @@ module.exports = {
         background_color: "#f7f0eb",
         theme_color: "#a2466c",
         display: "minimal-ui",
+        gcm_sender_id_comment : "For OneSignal Web Push Notifications, Do Not Change ID",
+        gcm_sender_id : "c8d5d2c0-c2d6-47f6-8e0f-70f06b1bde7d",
         icons: [
           {
             // Everything in /static will be copied to an equivalent
