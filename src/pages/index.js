@@ -76,12 +76,12 @@ class IndexPage extends React.Component {
             }}
             vertical
           >
-          <BgImage src={bg.src} sizes={bg} />
+          <BgImage src={bg.src} sizes={bg} aria-hidden="true" />
           <AbsoluteContainer text>
             <h1>
             {frHomepage.node.name}
             </h1>
-            <Image size='medium' centered circular src={require('../static/logos/logo.png')} />
+            <Image size='medium' centered circular src={require('../static/logos/logo.png')} alt="Logo" />
             
           </AbsoluteContainer>
         </Segment>
@@ -102,7 +102,7 @@ class IndexPage extends React.Component {
             <Recommandation>
           <Item.Group unstackable>
             <Item>
-            <Item.Image size="tiny" style={{ maxWidth: 40 }} src={require('../static/logos/LinkedIn_logo.png')} />
+            <Item.Image size="tiny" style={{ maxWidth: 40 }} src={require('../static/logos/LinkedIn_logo.png')} alt="LinkedIn" />
             <Item.Content >
 
               <Item.Header>"{recommandation.content.content}"</Item.Header>

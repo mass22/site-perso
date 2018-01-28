@@ -70,7 +70,7 @@ export default class TemplateWrapper extends React.Component {
               />
               <HeaderContainer className={'header'}>
                 <C_Header />
-                <Button type="button" id="burger" className="C--menu-burger cmb__anim" onClick={(event) => {this.toggleVisibility(); this.toggleBurger()}}>
+                <Button name="Toggle Menu" type="button" id="burger" className="C--menu-burger cmb__anim" onClick={(event) => {this.toggleVisibility(); this.toggleBurger()}} aria-label="Toggle Menu">
                   <span className="cmb__box">
                     <span className="cmb__inner"></span>
                   </span>
