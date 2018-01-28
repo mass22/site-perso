@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
+import Img from 'gatsby-image'
 import * as PropTypes from "prop-types"
 import Helmet from 'react-helmet'
 import config from "../../data/SiteConfig"
@@ -21,6 +22,30 @@ const Recommandation = styled.article`
     padding: 40px;
 `
 
+const BgImage = styled(Img)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100vh; // or whatever
+
+  // Adjust image positioning (if image covers area with defined height) and add font-family for polyfill
+  & > img {
+    object-fit: cover !important; // or whatever
+    object-position: 0% 0% !important; // or whatever
+    font-family: 'object-fit: cover !important; object-position: 0% 0% !important;' // needed for IE9+ polyfill
+  }
+`
+
+const AbsoluteContainer = styled(Container)`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+`
+
 class IndexPage extends React.Component {
   render() {
 
@@ -38,27 +63,27 @@ class IndexPage extends React.Component {
     };
     
     const frHomepage = this.props.data.fr.edges[0]
+    const bg = this.props.data.bg.edges[0].node.sizes
+
+
     const HOMEPAGE = ({ node }) => (
       <div>
         <Segment
             inverted
             textAlign='center'
             style={{ 
-              minHeight: 700, 
-              padding: '1em 0em',
-              background: `url(${Background}) fixed`,
-              backgroundSize: "cover",
-              backgroundRepeat: 'no-repeat',
+              position: 'relative',
             }}
             vertical
           >
-          <Container text>
+          <BgImage src={bg.src} sizes={bg} />
+          <AbsoluteContainer text>
             <h1>
             {frHomepage.node.name}
             </h1>
-            <Image size='medium' centered circular src={require('../static/logos/LinkedIn_logo.png')} />
+            <Image size='medium' centered circular src={require('../static/logos/logo.png')} />
             
-          </Container>
+          </AbsoluteContainer>
         </Segment>
 
 
@@ -93,7 +118,7 @@ class IndexPage extends React.Component {
           ))]}
           </ Slider>
         </Container>
-      </Container>
+      </Container>      
 
     </div>
       
@@ -136,6 +161,22 @@ query PageQuery {
           }
           link
         }
+      }
+    }
+  },
+  bg: allContentfulAsset (
+  	filter: { id: { eq: "c5PxvSEWkBqoswQKa0ioIAq" } }
+  ) {
+    edges {
+      node {
+        id 
+        sizes(maxWidth: 4000) {
+          base64
+          aspectRatio
+          src
+          srcSet
+          sizes
+        } 
       }
     }
   }
