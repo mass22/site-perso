@@ -5,10 +5,6 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-body {
-    background-color: #bbb;
-}
-
 h1,
 h2,
 h3,
@@ -67,6 +63,10 @@ li {
 header .ui.container,
 .pushable .push .ui.container {
     padding: 0;
+}
+
+.ui.container.fluid {
+    margin: 0 !important;
 }
 
 .active {

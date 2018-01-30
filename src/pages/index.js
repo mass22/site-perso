@@ -44,6 +44,9 @@ const AbsoluteContainer = styled(Container)`
   transform: translateY(-50%);
   left: 0;
   right: 0;
+  h1 {
+    text-shadow: 1px 1px 1px #000;
+  }
 `
 
 class IndexPage extends React.Component {

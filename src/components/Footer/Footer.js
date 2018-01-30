@@ -14,7 +14,7 @@ background-color: #bbb;
 text-align: center;
 width: 100%;
 margin-top: auto;
-padding: 15px 15px 40px 15px;
+padding: 15px 15px 40px 15px !important;
 img {
     max-width: 50px;
     margin: auto;

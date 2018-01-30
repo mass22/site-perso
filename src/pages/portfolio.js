@@ -39,7 +39,9 @@ display: flex;
 justify-content: space-between;
 `
 
-const WorkBottom = styled.div``
+const WorkBottom = styled.div`
+  margin-bottom: 15px;
+`
 
 const Title = styled.h2`
   color: ${palette.THIRD};
