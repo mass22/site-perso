@@ -28,9 +28,8 @@ const HeaderContainer = styled.header`
   width: 100%;
 `
 
-
-
 export default class TemplateWrapper extends React.Component {
+
   state = { visible: false }
   
   toggleVisibility = () => this.setState({ visible: !this.state.visible })
@@ -53,7 +52,6 @@ export default class TemplateWrapper extends React.Component {
     const { children } = this.props
     const { defaultVisible } = { visible: false }
 
-    
         return (
         
           <div>
@@ -76,7 +74,7 @@ export default class TemplateWrapper extends React.Component {
                   </span>
                 </Button>
               </HeaderContainer>
-              <Sidebar.Pushable as={Segment}>
+              <Sidebar.Pushable as={Segment} basic>
               <Sidebar as={Menu} animation='push' direction='top' visible={visible} inverted>
                 <div className="ui container">
                   <Link to="/" activeClassName={'active'} exact>

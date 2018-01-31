@@ -44,6 +44,16 @@ const AbsoluteContainer = styled(Container)`
   transform: translateY(-50%);
   left: 0;
   right: 0;
+  height: 100%;
+  background-color: rgba(0,0,0,.4);
+`
+
+const CenterBloc = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
   h1 {
     text-shadow: 1px 1px 1px #000;
   }
@@ -62,7 +72,7 @@ class IndexPage extends React.Component {
       swipeToSlide: true,
       autoplay: true,
       autoplaySpeed: 7000,
-      speed: 3000
+      speed: 2000
     };
     
     const frHomepage = this.props.data.fr.edges[0]
@@ -74,18 +84,17 @@ class IndexPage extends React.Component {
         <Segment
             inverted
             textAlign='center'
-            style={{ 
-              position: 'relative',
-            }}
+            style={{ position: 'relative' }}
             vertical
           >
           <BgImage src={bg.src} sizes={bg} aria-hidden="true" />
           <AbsoluteContainer text>
-            <h1>
-            {frHomepage.node.name}
-            </h1>
-            <Image size='medium' centered circular src={require('../static/logos/logo.png')} alt="Logo" />
-            
+            <CenterBloc>
+              <h1>
+              {frHomepage.node.name}
+              </h1>
+              <Image size='medium' centered circular src={require('../static/logos/logo.png')} alt="Logo" />
+            </CenterBloc>
           </AbsoluteContainer>
         </Segment>
 
@@ -97,7 +106,7 @@ class IndexPage extends React.Component {
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi porro odio magni! Id repellat molestiae expedita unde, quod voluptates blanditiis laudantium dicta totam architecto eveniet ratione facere minus eum rem?</p>
         </Container>
 
-       <Container fluid style={{backgroundColor: "#ccc"}} >
+       <Container fluid style={{backgroundColor: "#fff"}} >
         <Container>
           <h2>Ils ont dit...</h2>
           <Slider {...settings}>
@@ -127,8 +136,6 @@ class IndexPage extends React.Component {
       
     )
       
-      
-
     return (
       <div>
         <Helmet>

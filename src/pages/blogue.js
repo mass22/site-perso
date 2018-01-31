@@ -25,16 +25,27 @@ const ArticleItem = styled.article`
 `
 
 
+
+const Header = styled.header`
+  padding-bottom: 10px;
+  h2 {
+    margin-bottom: 0;
+  }
+`
+
+
 class BloguePage extends React.Component {
     render () {
       const frArticles = this.props.data.fr.edges
 
         const ARTICLE = ({ node }) => (
           
-            <ArticleItem>
-                <h2>{node.title}</h2>
+            <ArticleItem role="article" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <Header>
+                  <h2>{node.title}</h2>
+                  <p className={'typo__7'}>Posté le <time>{node.createdAt}</time></p>
+              </Header>
                 <p>{node.description}</p>
-                <p>{node.createdAt}</p>
                 <Button as={Link} to={`/blogue/${node.slug}/`}>lire l'article</Button>
             </ArticleItem>
         )
@@ -47,10 +58,11 @@ class BloguePage extends React.Component {
                 </Helmet>
 
                 <h1>Blogue</h1>
-
-                {frArticles.map(({ node }, i) => (
-                  <ARTICLE node={node} key={node.id} />
-                ))}
+                <section>
+                  {frArticles.map(({ node }, i) => (
+                    <ARTICLE node={node} key={node.id} />
+                  ))}
+                </section>
             </Container>
         )
     }
