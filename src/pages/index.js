@@ -103,6 +103,7 @@ class IndexPage extends React.Component {
           <p>
             {frHomepage.node.content.content}
           </p>
+          <a href={require('../static/files/CV_Massimo_RUSSO.pdf')} target={'_blank'} title={'CV Massimo Russo - PDF'}>CV</a>
         </Container>
 
        <Container fluid style={{backgroundColor: "#fff"}} >
