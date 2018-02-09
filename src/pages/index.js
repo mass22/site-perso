@@ -103,7 +103,6 @@ class IndexPage extends React.Component {
           <p>
             {frHomepage.node.content.content}
           </p>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi porro odio magni! Id repellat molestiae expedita unde, quod voluptates blanditiis laudantium dicta totam architecto eveniet ratione facere minus eum rem?</p>
         </Container>
 
        <Container fluid style={{backgroundColor: "#fff"}} >
