@@ -4,7 +4,7 @@ export const P_LIGHT = '#424242'
 export const P_DARK = '#000000'
 export const B_TYPO = '#ffffff'
 
-export const TURQUOISE = '#aed5ed'
+export const TURQUOISE = '#aed4ec'
 export const FLASH_BLUE = '#0096FF'
  
 export const BROWN = '#8d6e63'
@@ -16,7 +16,7 @@ export const S_DARK = '#002171'
 export const S_LIGHT = '#5472d3'
 export const S_LIGHT_TYPO = '#000000'
 
-export const THIRD = '#ff6d00'
+export const THIRD = '#FC3F1D'
 export const T_DARK = '#c43c00'
 export const T_LIGHT = '#ff9e40'
 export const T_TYPO = '#000000'
@@ -25,3 +25,4 @@ export const T_DARK_TYPO = '#ffffff'
 export const BG_MAIN = '#ffffff'
 
 export const SHADOW = '#e2e2e2'
+export const DARK_GRAY = '#515151'

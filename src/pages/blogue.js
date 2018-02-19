@@ -45,8 +45,18 @@ class BloguePage extends React.Component {
                   <h2>{node.title}</h2>
                   <p className={'typo__7'}>Posté le <time>{node.createdAt}</time></p>
               </Header>
+              <figure>
+              <Img
+                src={node.media.sizes.src}
+                style={{ 
+                  margin: 0,
+                  maxHeight: 250
+                }}
+                sizes={node.media.sizes}
+                />
+              </figure>
                 <p>{node.description}</p>
-                <Button as={Link} to={`/blogue/${node.slug}/`}>lire l'article</Button>
+                <Button as={Link} to={`/blogue/${node.slug}/`}>Lire l'article</Button>
             </ArticleItem>
         )
           
@@ -87,13 +97,13 @@ query PageBlogueQuery {
         slug
         createdAt(formatString: "DD MMM, YYYY") 
         media {
-          responsiveSizes {
+          sizes(maxWidth: 100) {
             base64
             aspectRatio
             src
             srcSet
             sizes
-          } 
+          }
         }
       }
     }

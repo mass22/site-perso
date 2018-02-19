@@ -28,7 +28,8 @@ class ArticleTemplate extends React.Component {
         createdAt,
         media,
         author : {name},
-        author : {bio}
+        author : {bio},
+        author : {image}
       } = article
 
       const metaTitle = {title}
@@ -42,15 +43,14 @@ class ArticleTemplate extends React.Component {
                 <p className={'U--bold'}><b>{description}</b></p>
               </header>
                 <figure style={{textAlign: "center"}}>
-                  {/* <Img
+                  <Img
                   src={media.sizes.src}
                   style={{ 
                     margin: 0
                     }}
                   sizes={media.sizes}
                   alt={media.title}
-                  /> */}
-                  <img src='http://lorempicsum.com/simpsons/600/300/2' alt="image de test" />
+                  />
                   <figcaption>{media.title}</figcaption>
                 </figure>
               <p>{content}</p>
@@ -58,7 +58,7 @@ class ArticleTemplate extends React.Component {
             
                 <Item.Group>
                   <Item>
-                    <Item.Image size='tiny' src='http://lorempicsum.com/simpsons/200/200/1' alt="image de test" />
+                    <Item.Image size='tiny' src={image.sizes.src} alt="image de test" />
                     <Item.Content>
                       <Item.Header as='cite'>{name}</Item.Header>
                       <Item.Meta as='time' style={{display: "block"}}>Posté le {createdAt}</Item.Meta>
@@ -107,6 +107,16 @@ query articleQuery($id: String!) {
       id
       name
       bio
+      image {
+        title
+        sizes(maxWidth: 100) {
+          base64
+          aspectRatio
+          src
+          srcSet
+          sizes
+        }
+      }
     }
   }
 }

@@ -45,6 +45,18 @@ p {
 
 a {
     color: $blue;
+    text-decoration: underline;
+
+    &:hover {
+        color: #4183C4;
+        text-decoration: none;
+    }
+}
+
+footer {
+    a {
+        color: $turquoise;
+    }
 }
 
 ul {
@@ -66,18 +78,43 @@ ul {
     padding: 2rem 0;
 }
 
+.ui.inverted.menu {
+    background: $dark-gray;
+}
+
 .ui.container.fluid,
 header .ui.container,
 .pushable .push .ui.container {
     padding: 0;
 }
 
+.ui.inverted.ui.push.top.visible.sidebar.menu {
+    a {
+        text-decoration: none;
+    }
+}
+
 .ui.container.fluid {
     margin: 0 !important;
 }
 
+.ui.text.container {
+    max-width: 800px !important;
+}
+
+.ui.items,
+.ui.button {
+    font-family: 'Quicksand';
+    font-weight: 400;
+}
+
+.ui.items > .item > .content > .header {
+    font-family: 'Quicksand';
+    font-weight: 900;
+}
+
 .active {
-    background-color: $flash-blue;
+    background-color: $turquoise;
     .item {
         color: $black !important;
         font-weight: bold !important;  
@@ -87,9 +124,9 @@ header .ui.container,
     @media ($bp-sm) {
         a {
             &:hover {
-                background-color: $light-orange;
+                background-color: $light-gray;
                 .item {
-                    color: $black !important;
+                    color: #FFFFFF !important;
                 }
             }
         }

@@ -103,14 +103,14 @@ class IndexPage extends React.Component {
           <p>
             {frHomepage.node.content.content}
           </p>
-          <a href={require('../static/files/CV_Massimo_RUSSO.pdf')} target={'_blank'} title={'CV Massimo Russo - PDF'}>CV</a>
+          <a href={require('../static/files/CV_Massimo_RUSSO.pdf')} target={'_blank'} title={'CV Massimo Russo - PDF'}>Téléchargez la version PDF</a>
         </Container>
 
        <Container fluid style={{backgroundColor: "#fff"}} >
         <Container>
           <h2>Ils ont dit...</h2>
           <Slider {...settings}>
-          {[frHomepage.node.recommandations.map((recommandation, i) =>(
+          {[frHomepage.node.recommendations.map((recommandation, i) =>(
             <Recommandation>
           <Item.Group unstackable>
             <Item>
@@ -163,7 +163,7 @@ query PageQuery {
         content {
           content
         }
-        recommandations {
+        recommendations {
           id
           author
           content {

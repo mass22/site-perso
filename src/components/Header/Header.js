@@ -9,9 +9,9 @@ import { Responsive, Button, Icon, Container } from 'semantic-ui-react'
 
 const Header = styled.section`
   font-size: 1.5em;
-  background-color: ${palette.PRIMARY};
+  background-color: ${palette.DARK_GRAY};
   color: ${palette.S_TYPO};
-  border-bottom: ${palette.FLASH_BLUE} 4px solid;
+  border-bottom: ${palette.TURQUOISE} 4px solid;
   position: relative;
   a {
     display: flex;
@@ -24,6 +24,13 @@ const ImgLogo = styled.img`
     margin-right: 20px;
     padding: 1.45rem 0;
 `
+
+// const SubTitle = styled.span`
+//     position: absolute;
+//     bottom: 15px;
+//     left: 100px;
+//     font-family: Quicksand;
+// `
 
 class C_Header extends React.Component {
     
@@ -43,6 +50,7 @@ class C_Header extends React.Component {
                         <ImgLogo src={require('./img/logo.png')} />
                     </Responsive>
                     <span className={'typo__0'}>Massimo Russo</span>
+                    {/* <SubTitle>Développeur Front-end</SubTitle> */}
                     </Link>
                 </Container>
             </Header>

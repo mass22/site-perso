@@ -10,7 +10,8 @@ import { Responsive, Button, Icon } from "semantic-ui-react"
 
 
 const Footer = styled.footer`
-background-color: #bbb;
+background-color: ${palette.DARK_GRAY};
+color: #FFFFFF;
 text-align: center;
 width: 100%;
 margin-top: auto;
