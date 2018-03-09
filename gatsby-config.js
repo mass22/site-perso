@@ -26,7 +26,7 @@ module.exports = {
         fonts: [
           `Pacifico:400`,
           `arimo:400`,
-          `Quicksand` // you can also specify font weights and styles
+          `Quicksand:300,400,500,700` // you can also specify font weights and styles
         ]
       }
     },

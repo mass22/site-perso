@@ -1,42 +1,40 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
-import config from "../../data/SiteConfig";
-import * as PropTypes from "prop-types"
+import config from '../../data/SiteConfig'
+import * as PropTypes from 'prop-types'
 /** Style **/
-import styled from 'styled-components';
+import styled from 'styled-components'
 import * as palette from '../layouts/scss/variables'
-import { Grid, Button, Icon, Modal, Header, Container } from 'semantic-ui-react'
-
+import { Grid, Button, Icon, Modal, Header, Container, Divider } from 'semantic-ui-react'
 
 const WorkItem = styled.div`
-border-radius: 4px;
-box-shadow: 0 0 0 1px ${palette.SHADOW};
-padding: 30px;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-&:hover, 
-&:focus {
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
-}
-.gatsby-image-outer-wrapper {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px ${palette.SHADOW};
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+  }
+  .gatsby-image-outer-wrapper {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 `
 
 const WorkTop = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 15px;
 `
 
 const WorkHeader = styled.div`
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 `
 
 const WorkBottom = styled.div`
@@ -46,7 +44,6 @@ const WorkBottom = styled.div`
 const Title = styled.h2`
   color: ${palette.THIRD};
   display: inline-flex;
-  
 `
 const Date = styled.p`
   display: inline-flex;
@@ -56,149 +53,149 @@ const Date = styled.p`
 const Description = styled.p``
 const Company = styled.span`
   display: inline;
-`
-const ExtLink = styled.a`
-  display: block;
-  padding: 10px;
-  border: 2px solid #fff;
-  border-radius: 4px;
-  text-align: center;
-  color: #fff;
-  margin-bottom: 5px;
-  background-color: ${palette.BROWN};
-  &:hover {
-    border: 2px solid ${palette.BROWN}; 
-    color: ${palette.BROWN};
-    background-color: #FFF;
-  }
+  text-transform: uppercase;
 `
 
 const Category = styled.span`
-  display: block;
+  display: table;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  padding: 4px 7px;
+  background: ${palette.THIRD};
+  color: #FFFFFF;
 `
 const Tags = styled.small`
   display: inline;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 5px;
+  padding: 4px 7px;
+  background: #E0E1ED none;
 `
 
-
 const propTypes = {
-    data: PropTypes.object.isRequired,
-  }
-
-class WorksPage extends React.Component {
-    render () {
-      const frWorks = this.props.data.fr.edges
-
-        const WORKS = ({ node }) => (
-          
-            <WorkItem>
-              <WorkTop>
-                <WorkHeader>
-                  <Title>{node.name}</Title>
-                  <Date>{node.date}</Date>
-                </ WorkHeader>
-                {[node.media.map((image, i) =>(
-                  <Img
-                  src={image.sizes.src}
-                  style={{ 
-                    margin: 0,
-                    height: 200
-                  }}
-                  sizes={image.sizes}
-                  className={'worksImg'}
-                  />
-                ))]}
-                <Description>{node.description.description}</Description>
-                <p className={'typo__7'}>Employeur:<Company> {node.company}</Company></p>
-              </WorkTop>
-              <WorkBottom>                
-                <Category>{node.category.name}</Category>
-                {[node.tags.map((tag, i) =>(
-                     <Tags>{`${tag.name}  `}</Tags>
-                  ))]}  
-              </ WorkBottom>
-              <Modal trigger={<Button>Voir plus</Button>} closeIcon>
-                <Modal.Header>{node.name}</Modal.Header>
-                <Modal.Content>
-                  <Modal.Description>
-                    <Header>Employeur: {node.company}</Header>
-                    {[node.media.map((image, i) =>(
-                      <Img
-                      src={image.sizes.src}
-                      style={{ 
-                        margin: 0,
-                        height: 450
-                      }}
-                      sizes={image.sizes}
-                      className={'worksImg'}
-                      />
-                    ))]}
-                    <Button basic as={'a'} href={node.link} target="_blank">
-                      <Icon name='world' /> Voir le site
-                    </Button>
-                  </Modal.Description>
-                </Modal.Content>
-              </Modal>
-            </WorkItem>
-          
-        )
-          
-        return(
-            <Container>
-              <Helmet>
-                <title>{`Portfolio | ${config.siteTitle}`}</title>
-              </Helmet>
-              <h1>Portfolio</h1>
-              <Grid stackable stretched columns={2}>
-                {frWorks.map(({ node }, i) => (
-                  <Grid.Column key={node.id}>
-                    <WORKS node={node} />
-                  </Grid.Column>
-                ))}
-              </Grid>
-            </Container>
-        )
-    }
+  data: PropTypes.object.isRequired,
 }
 
+class WorksPage extends React.Component {
+  render() {
+    const frWorks = this.props.data.fr.edges
+
+    let button = null
+
+    const WORKS = ({ node }) => (
+      <WorkItem>
+        <WorkTop>
+          <WorkHeader>
+            <Title>{node.name}</Title>
+            <Date>{node.date}</Date>
+          </WorkHeader>        
+          {[
+            node.media.map((image, i) => (
+              <Img
+                src={image.sizes.src}
+                style={{
+                  margin: 0,
+                  height: 200,
+                }}
+                sizes={image.sizes}
+                className={'worksImg'}
+              />
+            )),
+          ]}
+          <Description>{node.description.description}</Description>
+        </WorkTop>
+        <Divider section />
+        <WorkBottom>
+          <p className={'typo__7'}>
+            Employeur:<Company> {node.company}</Company>
+          </p>
+          <Category>{node.category.name}</Category>
+          {[node.tags.map((tag, i) => <Tags>{`${tag.name}`}</Tags>)]}
+        </WorkBottom>
+        <Modal trigger={<Button>Voir plus</Button>} closeIcon>
+          <Modal.Header>{node.name}</Modal.Header>
+          <Modal.Content>
+            <Modal.Description>
+              <Header>Employeur: {node.company}</Header>
+              {[
+                node.media.map((image, i) => (
+                  <Img
+                    src={image.sizes.src}
+                    style={{
+                      margin: 0,
+                      height: 450,
+                    }}
+                    sizes={image.sizes}
+                    className={'worksImg'}
+                  />
+                )),
+              ]}
+              {/* <Button basic as={'a'} href={node.link} target="_blank">
+                <Icon name="world" /> Voir le site
+              </Button> */}
+            </Modal.Description>
+          </Modal.Content>
+        </Modal>
+      </WorkItem>
+    )
+
+    return (
+      <Container>
+        <Helmet>
+          <title>{`Portfolio | ${config.siteTitle}`}</title>
+        </Helmet>
+        <h1>Portfolio</h1>
+        <Grid stackable stretched columns={2}>
+          {frWorks.map(({ node }, i) => (
+            <Grid.Column key={node.id}>
+              <WORKS node={node} />
+            </Grid.Column>
+          ))}
+        </Grid>
+      </Container>
+    )
+  }
+}
 
 WorksPage.propTypes = propTypes
 
 export default WorksPage
 
 export const pageWorksQuery = graphql`
-query PageWorksQuery {
-  fr: allContentfulWorks(
-      filter: { node_locale: { eq: "fr-CA" } } 
-      sort: {fields: [date] order: DESC}
-      limit: 5 ){
-    edges {
-      node {
-        id 
-        name
-        link
-        date(formatString: "YYYY") 
-        description {
+  query PageWorksQuery {
+    fr: allContentfulWorks(
+      filter: { node_locale: { eq: "fr-CA" } }
+      sort: { fields: [date], order: DESC }
+      limit: 5
+    ) {
+      edges {
+        node {
+          id
+          name
+          link
+          date(formatString: "YYYY")
+          description {
             description
-        }
-        company 
-        tags {
+          }
+          company
+          tags {
             name
-        }
-        category{
+          }
+          category {
             name
-        }
-        media {
-          sizes(maxWidth: 100) {
-            base64
-            aspectRatio
-            src
-            srcSet
-            sizes
-          } 
+          }
+          media {
+            sizes {
+              base64
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
         }
       }
     }
   }
-}
 `

@@ -6,7 +6,7 @@ export const B_TYPO = '#ffffff'
 
 export const TURQUOISE = '#aed4ec'
 export const FLASH_BLUE = '#0096FF'
- 
+
 export const BROWN = '#8d6e63'
 export const LIGHT_BROWN = '#be9c91'
 export const DARK_BROWN = '#5f4339'
