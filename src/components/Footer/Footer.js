@@ -77,14 +77,21 @@ class C_Footer extends React.Component {
             </Responsive>
           </p>
           <div>
-            <Button compact color="grey" as={'a'} href={'http://google.com'}>
+            <Button 
+              compact 
+              color="grey" 
+              as={'a'} 
+              href={'https://github.com/mass22/'}
+              target={'_blank'}
+              >
               <Icon name="github" /> Github
             </Button>
             <Button
               compact
               color="linkedin"
               as={'a'}
-              href={'http://google.com'}
+              href={'https://www.linkedin.com/in/russomassimo'}
+              target={'_blank'}
             >
               <Icon name="linkedin" /> Linkedin
             </Button>

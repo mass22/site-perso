@@ -65,13 +65,26 @@ const Category = styled.span`
   color: #FFFFFF;
 `
 const Tags = styled.small`
+  @media (${palette.SM}) {
+    display: none;
+  }
   display: inline;
   border: 1px solid #ccc;
   border-radius: 20px;
   margin-right: 5px;
   padding: 4px 7px;
   background: #E0E1ED none;
+
 `
+
+const CoverImg = styled(Img)`
+  margin: 0;
+  height: 200px;
+  img {
+    object-fit: contain !important;
+  }
+`
+
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -87,17 +100,13 @@ class WorksPage extends React.Component {
       <WorkItem>
         <WorkTop>
           <WorkHeader>
-            <Title>{node.name}</Title>
+            <Title className={'typo__3'}>{node.name}</Title>
             <Date>{node.date}</Date>
           </WorkHeader>        
           {[
             node.media.map((image, i) => (
-              <Img
+              <CoverImg
                 src={image.sizes.src}
-                style={{
-                  margin: 0,
-                  height: 200,
-                }}
                 sizes={image.sizes}
                 className={'worksImg'}
               />
@@ -105,38 +114,42 @@ class WorksPage extends React.Component {
           ]}
           <Description>{node.description.description}</Description>
         </WorkTop>
-        <Divider section />
-        <WorkBottom>
-          <p className={'typo__7'}>
-            Employeur:<Company> {node.company}</Company>
-          </p>
-          <Category>{node.category.name}</Category>
-          {[node.tags.map((tag, i) => <Tags>{`${tag.name}`}</Tags>)]}
-        </WorkBottom>
-        <Modal trigger={<Button>Voir plus</Button>} closeIcon>
-          <Modal.Header>{node.name}</Modal.Header>
-          <Modal.Content>
-            <Modal.Description>
-              <Header>Employeur: {node.company}</Header>
-              {[
-                node.media.map((image, i) => (
-                  <Img
-                    src={image.sizes.src}
-                    style={{
-                      margin: 0,
-                      height: 450,
-                    }}
-                    sizes={image.sizes}
-                    className={'worksImg'}
-                  />
-                )),
-              ]}
-              {/* <Button basic as={'a'} href={node.link} target="_blank">
-                <Icon name="world" /> Voir le site
-              </Button> */}
-            </Modal.Description>
-          </Modal.Content>
-        </Modal>
+        <div>
+          <WorkBottom>
+          <Divider section />
+            <p className={'typo__7'}>
+              Employeur:<Company> {node.company}</Company>
+            </p>
+            <Category>{node.category.name}</Category>
+            <div>
+              {[node.tags.map((tag, i) => <Tags>{`${tag.name}`}</Tags>)]}
+            </div>
+          </WorkBottom>
+          <Modal trigger={<Button className={'U--W--100'}>Voir plus</Button>} closeIcon>
+            <Modal.Header>{node.name}</Modal.Header>
+            <Modal.Content>
+              <Modal.Description>
+                <Header>Employeur: {node.company}</Header>
+                {[
+                  node.media.map((image, i) => (
+                    <Img
+                      src={image.sizes.src}
+                      style={{
+                        margin: 0,
+                        height: 450,
+                      }}
+                      sizes={image.sizes}
+                      className={'worksImg'}
+                    />
+                  )),
+                ]}
+                {/* <Button basic as={'a'} href={node.link} target="_blank">
+                  <Icon name="world" /> Voir le site
+                </Button> */}
+              </Modal.Description>
+            </Modal.Content>
+          </Modal>
+        </div>
       </WorkItem>
     )
 
@@ -167,7 +180,6 @@ export const pageWorksQuery = graphql`
     fr: allContentfulWorks(
       filter: { node_locale: { eq: "fr-CA" } }
       sort: { fields: [date], order: DESC }
-      limit: 5
     ) {
       edges {
         node {

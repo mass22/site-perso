@@ -17,8 +17,8 @@ const propTypes = {
 }
 
 const Recommandation = styled.article`
-  border-top: 2px solid ${palette.BROWN};
-  border-bottom: 2px solid ${palette.BROWN};
+  border-top: 2px solid ${palette.DARK_GRAY};
+  border-bottom: 2px solid ${palette.DARK_GRAY};
   padding: 40px;
 `
 

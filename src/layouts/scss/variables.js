@@ -1,3 +1,11 @@
+//BREAKPOINTS
+export const XS = 'min-width: 540px'
+export const SM = 'min-width: 640px'
+export const MD = 'min-width: 992px'
+export const LG = 'min-width: 1200px'
+export const XL = 'min-width: 1920px'
+export const XXL = 'min-width: 2880px'
+
 // COLORS
 export const PRIMARY = '#1b1b1b'
 export const P_LIGHT = '#424242'
