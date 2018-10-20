@@ -1,26 +1,30 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import Img from 'gatsby-image'
-import * as PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import config from '../../data/SiteConfig'
-import Slider from 'react-slick'
+import React, { Component } from "react";
+import Link from "gatsby-link";
+import Img from "gatsby-image";
+import * as PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import config from "../../data/SiteConfig";
+import Slider from "react-slick";
+import MarkdownRenderer from "react-markdown-renderer";
 /** Style **/
-import styled from 'styled-components'
-import * as palette from '../layouts/scss/variables'
-import { Item, Container, Segment, Image } from 'semantic-ui-react'
+import styled from "styled-components";
+import * as palette from "../layouts/scss/variables";
+import { Item, Container, Segment, Image } from "semantic-ui-react";
 
-import Background from '../static/backgrounds/bg-home-2.jpeg'
+import Background from "../static/backgrounds/bg-home-2.jpeg";
 
 const propTypes = {
-  data: PropTypes.object.isRequired,
-}
+  data: PropTypes.object.isRequired
+};
 
 const Recommandation = styled.article`
   border-top: 2px solid ${palette.DARK_GRAY};
   border-bottom: 2px solid ${palette.DARK_GRAY};
-  padding: 40px;
-`
+  padding: 20px 0;
+  @media (${palette.SM}) {
+    padding: 40px;
+  }
+`;
 
 const BgImage = styled(Img)`
   position: absolute;
@@ -34,9 +38,9 @@ const BgImage = styled(Img)`
   & > img {
     object-fit: cover !important; // or whatever
     object-position: 0% 0% !important; // or whatever
-    font-family: 'object-fit: cover !important; object-position: 0% 0% !important;'; // needed for IE9+ polyfill
+    font-family: "object-fit: cover !important; object-position: 0% 0% !important;"; // needed for IE9+ polyfill
   }
-`
+`;
 
 const AbsoluteContainer = styled(Container)`
   position: absolute;
@@ -46,7 +50,7 @@ const AbsoluteContainer = styled(Container)`
   right: 0;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-`
+`;
 
 const CenterBloc = styled.div`
   position: absolute;
@@ -57,7 +61,7 @@ const CenterBloc = styled.div`
   h1 {
     text-shadow: 1px 1px 1px #000;
   }
-`
+`;
 
 class IndexPage extends React.Component {
   render() {
@@ -65,24 +69,25 @@ class IndexPage extends React.Component {
       dots: true,
       infinite: true,
       lazyLoad: true,
+      adaptiveHeight: true,
       accessibility: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       swipeToSlide: true,
       autoplay: true,
       autoplaySpeed: 7000,
-      speed: 2000,
-    }
+      speed: 2000
+    };
 
-    const frHomepage = this.props.data.fr.edges[0]
-    const bg = this.props.data.bg.edges[0].node.sizes
+    const frHomepage = this.props.data.fr.edges[0];
+    const bg = this.props.data.bg.edges[0].node.sizes;
 
     const HOMEPAGE = ({ node }) => (
       <div>
         <Segment
           inverted
           textAlign="center"
-          style={{ position: 'relative' }}
+          style={{ position: "relative" }}
           vertical
         >
           <BgImage src={bg.src} sizes={bg} aria-hidden="true" />
@@ -93,7 +98,7 @@ class IndexPage extends React.Component {
                 size="medium"
                 centered
                 circular
-                src={require('../static/logos/logo.png')}
+                src={require("../static/logos/logo.png")}
                 alt="Logo"
               />
             </CenterBloc>
@@ -101,17 +106,17 @@ class IndexPage extends React.Component {
         </Segment>
 
         <Container>
-          <p>{frHomepage.node.content.content}</p>
+          <MarkdownRenderer markdown={frHomepage.node.content.content} />
           <a
-            href={require('../static/files/CV_Massimo_RUSSO.pdf')}
-            target={'_blank'}
-            title={'CV Massimo Russo - PDF'}
+            href={require("../static/files/CV_Massimo_RUSSO.pdf")}
+            target={"_blank"}
+            title={"CV Massimo Russo - PDF"}
           >
             Téléchargez la version PDF
           </a>
         </Container>
 
-        <Container fluid style={{ backgroundColor: '#fff' }}>
+        <Container fluid style={{ backgroundColor: "#fff" }}>
           <Container>
             <h2>Ils ont dit...</h2>
             <Slider {...settings}>
@@ -123,7 +128,7 @@ class IndexPage extends React.Component {
                         <Item.Image
                           size="tiny"
                           style={{ maxWidth: 40 }}
-                          src={require('../static/logos/LinkedIn_logo.png')}
+                          src={require("../static/logos/LinkedIn_logo.png")}
                           alt="LinkedIn"
                         />
                         <Item.Content>
@@ -140,13 +145,13 @@ class IndexPage extends React.Component {
                       </Item>
                     </Item.Group>
                   </Recommandation>
-                )),
+                ))
               ]}
             </Slider>
           </Container>
         </Container>
       </div>
-    )
+    );
 
     return (
       <div>
@@ -155,13 +160,13 @@ class IndexPage extends React.Component {
         </Helmet>
         <HOMEPAGE />
       </div>
-    )
+    );
   }
 }
 
-IndexPage.propTypes = propTypes
+IndexPage.propTypes = propTypes;
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query PageQuery {
@@ -199,4 +204,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

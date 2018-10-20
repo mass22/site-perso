@@ -6,23 +6,25 @@ $lg: 1200px;
 $xlg: 1920px;
 $xxlg: 2880px;
 
-$bp-xs: 'min-width: 540px';
-$bp-sm: 'min-width: 640px';
-$bp-md: 'min-width: 992px';
-$bp-lg: 'min-width: 1200px';
-$bp-xl: 'min-width: 1920px';
-$bp-xxl: 'min-width: 2880px';
+$bp-xs: "min-width: 540px";
+$bp-sm: "min-width: 640px";
+$bp-md: "min-width: 992px";
+$bp-lg: "min-width: 1200px";
+$bp-xl: "min-width: 1920px";
+$bp-xxl: "min-width: 2880px";
+
+$bp-max-xs: "max-width: 540px";
 
 // FONTS
 
-$FontSiteName: 'Pacifico';
-$FontSite: 'Quicksand';
+$FontSiteName: "Pacifico";
+$FontSite: "Quicksand";
 
 // COLORS
 
 $black: #1b1b1b;
 $blue: #0d47a1;
-$flash-blue: #0096FF;
+$flash-blue: #0096ff;
 $turquoise: #aed4ec;
 $white: #ffffff;
 
@@ -30,26 +32,23 @@ $brown: #8d6e63;
 $light-brown: #be9c91;
 $dark-brown: #5f4339;
 
-$orange : #FC3F1D;
-$dark-orange : #c43c00;
-$light-orange : #ff9e40;
+$orange: #fc3f1d;
+$dark-orange: #c43c00;
+$light-orange: #ff9e40;
 
+$primary: $black;
+$light-primary: #424242;
+$dark-primary: $black;
+$typo-primary: $white;
 
-$primary : $black;
-$light-primary : #424242;
-$dark-primary : $black;
-$typo-primary : $white;
+$secondary: $blue;
+$dark-secondary: #002171;
+$light-secondary: #5472d3;
+$typo-secondary: $black;
 
+$BG_MAIN: $white;
 
-$secondary : $blue;
-$dark-secondary : #002171;
-$light-secondary : #5472d3;
-$typo-secondary : $black;
-
-
-$BG_MAIN : $white;
-
-$shadow : #e2e2e2;
+$shadow: #e2e2e2;
 
 $dark-gray: #515151;
 $light-gray: #909090;
