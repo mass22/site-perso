@@ -80,6 +80,7 @@ class IndexPage extends React.Component {
     };
 
     const frHomepage = this.props.data.fr.edges[0];
+
     const bg = this.props.data.bg.edges[0].node.sizes;
 
     const HOMEPAGE = ({ node }) => (

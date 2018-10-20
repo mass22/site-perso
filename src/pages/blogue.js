@@ -1,18 +1,18 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Img from 'gatsby-image'
-import Helmet from 'react-helmet'
-import config from '../../data/SiteConfig'
+import React from "react";
+import Link from "gatsby-link";
+import Img from "gatsby-image";
+import Helmet from "react-helmet";
+import config from "../../data/SiteConfig";
 /** Style **/
-import styled from 'styled-components'
-import * as palette from '../layouts/scss/variables'
-import { Button, Icon, Container } from 'semantic-ui-react'
+import styled from "styled-components";
+import * as palette from "../layouts/scss/variables";
+import { Button, Icon, Container } from "semantic-ui-react";
 
-import * as PropTypes from 'prop-types'
+import * as PropTypes from "prop-types";
 
 const propTypes = {
-  data: PropTypes.object.isRequired,
-}
+  data: PropTypes.object.isRequired
+};
 
 const ArticleItem = styled.article`
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
@@ -22,18 +22,23 @@ const ArticleItem = styled.article`
   &:last-child {
     margin-bottom: 0;
   }
-`
+`;
 
 const Header = styled.header`
   padding-bottom: 10px;
   h2 {
     margin-bottom: 0;
   }
-`
+`;
 
 class BloguePage extends React.Component {
   render() {
-    const frArticles = this.props.data.fr.edges
+    const frArticles = this.props.data.fr.edges;
+    const MetaTitle = () => (
+      <Helmet>
+        <title>{`Blogue | ${config.siteTitle}`}</title>
+      </Helmet>
+    );
 
     const ARTICLE = ({ node }) => (
       <ArticleItem
@@ -43,7 +48,7 @@ class BloguePage extends React.Component {
       >
         <Header>
           <h2>{node.title}</h2>
-          <p className={'typo__7'}>
+          <p className={"typo__7"}>
             Posté le <time>{node.createdAt}</time>
           </p>
         </Header>
@@ -52,7 +57,7 @@ class BloguePage extends React.Component {
             src={node.media.sizes.src}
             style={{
               margin: 0,
-              maxHeight: 250,
+              maxHeight: 250
             }}
             sizes={node.media.sizes}
           />
@@ -62,14 +67,11 @@ class BloguePage extends React.Component {
           Lire l'article
         </Button>
       </ArticleItem>
-    )
+    );
 
     return (
       <Container>
-        <Helmet>
-          <title>{`Blogue | ${config.siteTitle}`}</title>
-        </Helmet>
-
+        <MetaTitle />
         <h1>Blogue</h1>
         <section>
           {frArticles.map(({ node }, i) => (
@@ -77,13 +79,13 @@ class BloguePage extends React.Component {
           ))}
         </section>
       </Container>
-    )
+    );
   }
 }
 
-BloguePage.propTypes = propTypes
+BloguePage.propTypes = propTypes;
 
-export default BloguePage
+export default BloguePage;
 
 export const pageBlogueQuery = graphql`
   query PageBlogueQuery {
@@ -112,4 +114,4 @@ export const pageBlogueQuery = graphql`
       }
     }
   }
-`
+`;
