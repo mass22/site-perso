@@ -107,7 +107,10 @@ class IndexPage extends React.Component {
         </Segment>
 
         <Container>
-          <MarkdownRenderer markdown={frHomepage.node.content.content} />
+          <MarkdownRenderer
+            markdown={frHomepage.node.content.content}
+            style={{ marginBottom: 10 }}
+          />
           <a
             href={require("../static/files/CV_Massimo_RUSSO.pdf")}
             target={"_blank"}
