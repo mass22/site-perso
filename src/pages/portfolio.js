@@ -107,6 +107,13 @@ const ModalImg = styled(Img)`
   }
 `;
 
+const NoLink = styled.p`
+  padding: 10px;
+  border: 1px solid ${palette.SHADOW};
+  margin-top: 10px;
+  text-align: center;
+`;
+
 const propTypes = {
   data: PropTypes.object.isRequired
 };
@@ -119,6 +126,8 @@ class WorksPage extends React.Component {
           <Icon name="world" /> Voir le site
         </Button>
       );
+    } else {
+      return <NoLink>Le site n'est plus en ligne</NoLink>;
     }
   }
 

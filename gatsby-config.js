@@ -1,12 +1,12 @@
 const config = require("./data/SiteConfig");
-const pathPrefix = ""
+const pathPrefix = "";
 
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: `Massimo Russo - Développeur Front-end`,
     siteUrl: `https://www.russo-massimo.com`,
-    image_url: `${config.siteUrl + pathPrefix}/logos/logo.png`,
+    image_url: `${config.siteUrl + pathPrefix}/logos/logo.png`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,8 +16,8 @@ module.exports = {
       options: {
         spaceId: `h9ob7kgkg35g`,
         accessToken: `e0393b8d25904e2303c0921aee7c92c37d4f67021cd29b37a50c376c13534706`,
-        host: `591fbea9088352b6c974f9cf718e8b48a15627ca244d3516dbda58d67d2f32a8`,
-      },
+        host: `591fbea9088352b6c974f9cf718e8b48a15627ca244d3516dbda58d67d2f32a8`
+      }
     },
     `gatsby-transformer-remark`,
     {
@@ -39,8 +39,9 @@ module.exports = {
         background_color: "#f7f0eb",
         theme_color: "#a2466c",
         display: "minimal-ui",
-        gcm_sender_id_comment : "For OneSignal Web Push Notifications, Do Not Change ID",
-        gcm_sender_id : "c8d5d2c0-c2d6-47f6-8e0f-70f06b1bde7d",
+        gcm_sender_id_comment:
+          "For OneSignal Web Push Notifications, Do Not Change ID",
+        gcm_sender_id: "c8d5d2c0-c2d6-47f6-8e0f-70f06b1bde7d",
         icons: [
           {
             // Everything in /static will be copied to an equivalent
@@ -49,15 +50,15 @@ module.exports = {
             // you can reference them here
             src: `/favicons/favicon.png`,
             sizes: `16x16`,
-            type: `image/png`,
-          },
+            type: `image/png`
+          }
           // {
           //   src: `/favicons/android-chrome-512x512.png`,
           //   sizes: `512x512`,
           //   type: `image/png`,
           // },
-        ],
-      },
+        ]
+      }
     },
     {
       resolve: `gatsby-plugin-nprogress`,
@@ -65,14 +66,14 @@ module.exports = {
         // Setting a color is optional.
         color: `tomato`,
         // Disable the loading spinner.
-        showSpinner: true,
-      },
+        showSpinner: true
+      }
     },
     {
-      resolve: 'gatsby-plugin-purify-css',
+      resolve: "gatsby-plugin-purify-css",
       options: {
         /* Defaults */
-        styleId: 'gatsby-inlined-css',
+        styleId: "gatsby-inlined-css",
         purifyOptions: {
           info: true,
           minify: true
@@ -87,5 +88,5 @@ module.exports = {
     //`gatsby-transformer-sharp`,
     //Always last: Netlify
     `gatsby-plugin-netlify`
-  ],
-}
+  ]
+};
