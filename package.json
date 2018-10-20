@@ -1,5 +1,5 @@
 {
-  "name": "Massimo-Russo-Personal-Website",
+  "name": "massimo_russo_personal_website",
   "description": "Massimo Russo | Front-end Developer",
   "version": "1.0.0",
   "author": "Massimo Russo <russo.mass@gmail.com>",
@@ -28,15 +28,14 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^2.3.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
