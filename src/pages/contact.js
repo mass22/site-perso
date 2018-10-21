@@ -34,7 +34,7 @@ class ContactPage extends React.Component {
       body: encode({ "form-name": "contact", ...this.state })
     })
       .then(() => console.log("message envoyé !"))
-      .catch(error => alert(error));
+      .catch(error => console.log(error));
   };
 
   render() {
