@@ -19,6 +19,39 @@ module.exports = {
         host: `591fbea9088352b6c974f9cf718e8b48a15627ca244d3516dbda58d67d2f32a8`
       }
     },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/favicon.png",
+
+        // WebApp Manifest Configuration
+        appName: null, // Inferred with your package.json
+        appDescription: null,
+        developerName: null,
+        developerURL: null,
+        dir: "auto",
+        lang: "fr-CA",
+        background: "#fff",
+        theme_color: "#fff",
+        display: "standalone",
+        orientation: "any",
+        start_url: "/?homescreen=1",
+        version: "1.0",
+
+        icons: {
+          android: false,
+          appleIcon: false,
+          appleStartup: false,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          opengraph: false,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
+      }
+    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-google-fonts`,
