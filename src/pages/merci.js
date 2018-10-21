@@ -2,6 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import { Container } from "semantic-ui-react";
 import { Helmet } from "react-helmet";
+import config from "../../data/SiteConfig";
 
 export default () => (
   <Container>
