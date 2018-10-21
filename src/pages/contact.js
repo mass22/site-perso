@@ -60,6 +60,7 @@ class ContactPage extends React.Component {
           </p>
 
           <Form.Group widths="equal">
+            <input type="hidden" name="form-name" value="contact" />
             <Form.Field
               id="form-input-control-first-name"
               control={Input}
