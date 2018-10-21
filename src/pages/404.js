@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "semantic-ui-react";
 import { Helmet } from "react-helmet";
+import config from "../../data/SiteConfig";
 
 const NotFoundPage = () => (
   <Container>
