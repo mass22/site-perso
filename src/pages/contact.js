@@ -40,6 +40,9 @@ class ContactPage extends React.Component {
   render() {
     return (
       <Container>
+        <Helmet>
+          <title>{`Contact | ${config.siteTitle}`}</title>
+        </Helmet>
         <h1>Contact</h1>
         <p>
           Vous avez un projet ? Une idée? Une offre d'emploi ? Ou simplement me
