@@ -119,6 +119,16 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
     //`gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: config.googleTagManagerId,
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false
+      }
+    },
     //Always last: Netlify
     `gatsby-plugin-netlify`
   ]
