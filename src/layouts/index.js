@@ -61,8 +61,8 @@ export default class TemplateWrapper extends React.Component {
         <Helmet
           meta={[
             { charSet: 'utf-8' },
-            { name: 'description', content: 'Massimo Russo' },
-            { name: 'keywords', content: 'Front-end' },
+            { name: 'description', content: 'Massimo Russo, développeur Front-End à Montréal' },
+            { name: 'keywords', content: 'Front-end, developer, développeur, frontend, front end, montreal, canada' },
           ]}
           htmlAttributes={{
             lang: 'fr-CA',
