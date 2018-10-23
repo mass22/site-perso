@@ -1,0 +1,33 @@
+@import "../../../layouts/scss/variablesSass";
+
+.header {
+  @media ($bp-md) {
+    .ui.container {
+      display: inline-flex;
+    }
+    section {
+      .ui.container {
+        width: auto;
+      }
+    }
+  }
+}
+.headerLinks {
+  align-items: center;
+  @media ($bp-max-md) {
+    display: none !important;
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+    margin-right: 15px;
+
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: $turquoise;
+      text-decoration: underline !important;
+    }
+  }
+}
