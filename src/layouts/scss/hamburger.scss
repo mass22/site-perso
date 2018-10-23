@@ -1,104 +1,135 @@
 .C--menu-burger {
-    padding: 10px 10px;
-    display: inline-block;
-    cursor: pointer;
-    transition-property: opacity, filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    font: inherit;
-    color: inherit;
-    text-transform: none;
+  @media ($bp-md) {
+    display: none !important;
+  }
+  padding: 10px 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent !important;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  &:hover,
+  &:focus {
     background-color: transparent !important;
-    border: 0;
-    margin: 0;
-    overflow: visible;     
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    &:hover,
-      &:focus {
-        background-color: transparent !important;
-      }
-    }
-      
-  .cmb__box {
-    width: 40px;
-    height: 24px;
-    display: inline-block;
-    position: relative; }
-  
-  .cmb__inner {
-    display: block;
-    top: 50%;
-    margin-top: -2px; }
-    .cmb__inner, .cmb__inner::before, .cmb__inner::after {
-      width: 40px;
-      height: 4px;
-      background-color: #fff;
-      border-radius: 4px;
-      position: absolute;
-      transition-property: transform;
-      transition-duration: 0.15s;
-      transition-timing-function: ease; }
-    .cmb__inner::before, .cmb__inner::after {
-      content: "";
-      display: block; }
-    .cmb__inner::before {
-      top: -10px; }
-    .cmb__inner::after {
-      bottom: -10px; }
+  }
+}
+
+.cmb__box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.cmb__inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.cmb__inner,
+.cmb__inner::before,
+.cmb__inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.cmb__inner::before,
+.cmb__inner::after {
+  content: "";
+  display: block;
+}
+.cmb__inner::before {
+  top: -10px;
+}
+.cmb__inner::after {
+  bottom: -10px;
+}
 
 /*
    * Spring
    */
-   .cmb__anim .cmb__inner {
-    top: 2px;
-    transition: background-color 0s 0.13s linear; }
-    .cmb__anim .cmb__inner::before {
-      top: 10px;
-      transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-    .cmb__anim .cmb__inner::after {
-      top: 20px;
-      transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-  
-  .cmb__anim.is-active .cmb__inner {
-    transition-delay: 0.22s;
-    background-color: transparent; }
-    .cmb__anim.is-active .cmb__inner::before {
-      top: 0;
-      transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-      transform: translate3d(0, 10px, 0) rotate(45deg); }
-    .cmb__anim.is-active .cmb__inner::after {
-      top: 0;
-      transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-      transform: translate3d(0, 10px, 0) rotate(-45deg); }
-  
-  /*
+.cmb__anim .cmb__inner {
+  top: 2px;
+  transition: background-color 0s 0.13s linear;
+}
+.cmb__anim .cmb__inner::before {
+  top: 10px;
+  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.cmb__anim .cmb__inner::after {
+  top: 20px;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.cmb__anim.is-active .cmb__inner {
+  transition-delay: 0.22s;
+  background-color: transparent;
+}
+.cmb__anim.is-active .cmb__inner::before {
+  top: 0;
+  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+.cmb__anim.is-active .cmb__inner::after {
+  top: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translate3d(0, 10px, 0) rotate(-45deg);
+}
+
+/*
      * Spring Reverse
      */
-  .cmb__anim-r .cmb__inner {
-    top: auto;
-    bottom: 0;
-    transition-duration: 0.13s;
-    transition-delay: 0s;
-    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-    .cmb__anim-r .cmb__inner::after {
-      top: -20px;
-      transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0s linear; }
-    .cmb__anim-r .cmb__inner::before {
-      transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-  
-  .cmb__anim-r.is-active .cmb__inner {
-    transform: translate3d(0, -10px, 0) rotate(-45deg);
-    transition-delay: 0.22s;
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
-    .cmb__anim-r.is-active .cmb__inner::after {
-      top: 0;
-      opacity: 0;
-      transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0s 0.22s linear; }
-    .cmb__anim-r.is-active .cmb__inner::before {
-      top: 0;
-      transform: rotate(90deg);
-      transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1); }
-  
+.cmb__anim-r .cmb__inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.cmb__anim-r .cmb__inner::after {
+  top: -20px;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    opacity 0s linear;
+}
+.cmb__anim-r .cmb__inner::before {
+  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.cmb__anim-r.is-active .cmb__inner {
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.cmb__anim-r.is-active .cmb__inner::after {
+  top: 0;
+  opacity: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    opacity 0s 0.22s linear;
+}
+.cmb__anim-r.is-active .cmb__inner::before {
+  top: 0;
+  transform: rotate(90deg);
+  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+}

@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
-import * as palette from '../../layouts/scss/variables'
-import { Responsive, Button, Icon, Container } from 'semantic-ui-react'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Link from "gatsby-link";
+import Img from "gatsby-image";
+import styled from "styled-components";
+import * as palette from "../../layouts/scss/variables";
+import { Responsive, Button, Icon, Container } from "semantic-ui-react";
+import "./style/header.scss";
 
 const Header = styled.section`
   font-size: 1.5em;
@@ -16,13 +17,13 @@ const Header = styled.section`
     display: inline-flex;
     align-items: center;
   }
-`
+`;
 
 const ImgLogo = styled.img`
   max-width: 80px;
   margin-right: 20px;
   padding: 1.45rem 0;
-`
+`;
 
 // const SubTitle = styled.span`
 //     position: absolute;
@@ -34,25 +35,39 @@ const ImgLogo = styled.img`
 class C_Header extends React.Component {
   render() {
     return (
-      <Header className={'ui fluid container'}>
+      <Header className={"ui fluid container"}>
         <Container>
           <Link
             to="/"
             style={{
-              color: 'white',
-              textDecoration: 'none',
+              color: "white",
+              textDecoration: "none"
             }}
           >
             <Responsive minWidth={640}>
-              <ImgLogo src={require('./img/logo.png')} />
+              <ImgLogo src={require("./img/logo.png")} />
             </Responsive>
-            <span className={'typo__0'}>Massimo Russo</span>
+            <span className={"typo__0"}>Massimo Russo</span>
             {/* <SubTitle>Développeur Front-end</SubTitle> */}
           </Link>
         </Container>
+        <Container className={"headerLinks"}>
+          <Link to="/" activeClassName={"active"} exact>
+            Accueil
+          </Link>
+          <Link to="/portfolio/" activeClassName={"active"} exact>
+            Portfolio
+          </Link>
+          <Link to="/blogue/" activeClassName={"active"} exact>
+            Blogue
+          </Link>
+          <Link to="/contact/" activeClassName={"active"} exact>
+            Contact
+          </Link>
+        </Container>
       </Header>
-    )
+    );
   }
 }
 
-export default C_Header
+export default C_Header;
