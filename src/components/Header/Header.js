@@ -43,6 +43,7 @@ class C_Header extends React.Component {
               color: "white",
               textDecoration: "none"
             }}
+            tabIndex="0"
           >
             <Responsive minWidth={640}>
               <ImgLogo src={require("./img/logo.png")} />
@@ -52,16 +53,16 @@ class C_Header extends React.Component {
           </Link>
         </Container>
         <Container className={"headerLinks"}>
-          <Link to="/" activeClassName={"active"} exact>
+          <Link to="/" activeClassName={"active"} exact tabIndex="0">
             Accueil
           </Link>
-          <Link to="/portfolio/" activeClassName={"active"} exact>
+          <Link to="/portfolio/" activeClassName={"active"} exact tabIndex="0">
             Portfolio
           </Link>
-          <Link to="/blogue/" activeClassName={"active"} exact>
+          <Link to="/blogue/" activeClassName={"active"} exact tabIndex="0">
             Blogue
           </Link>
-          <Link to="/contact/" activeClassName={"active"} exact>
+          <Link to="/contact/" activeClassName={"active"} exact tabIndex="0">
             Contact
           </Link>
         </Container>
