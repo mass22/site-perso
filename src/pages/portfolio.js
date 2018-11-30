@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import * as PropTypes from "prop-types";
+import MarkdownRenderer from "react-markdown-renderer";
 /** Style **/
 import styled from "styled-components";
 import * as palette from "../layouts/scss/variables";
@@ -152,7 +153,9 @@ class WorksPage extends React.Component {
               />
             ))
           ]}
-          <Description>{node.description.description}</Description>
+          <Description>
+            <MarkdownRenderer markdown={node.description.description} />
+          </Description>
         </WorkTop>
         <div>
           <WorkBottom>

@@ -25,13 +25,6 @@ const ImgLogo = styled.img`
   padding: 1.45rem 0;
 `;
 
-// const SubTitle = styled.span`
-//     position: absolute;
-//     bottom: 15px;
-//     left: 100px;
-//     font-family: Quicksand;
-// `
-
 class C_Header extends React.Component {
   render() {
     return (
@@ -49,7 +42,6 @@ class C_Header extends React.Component {
               <ImgLogo src={require("./img/logo.png")} />
             </Responsive>
             <span className={"typo__0"}>Massimo Russo</span>
-            {/* <SubTitle>Développeur Front-end</SubTitle> */}
           </Link>
         </Container>
         <Container className={"headerLinks"}>
