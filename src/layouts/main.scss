@@ -46,10 +46,32 @@ p {
 a {
   color: $blue;
   text-decoration: underline;
+  position: relative;
+  @extend .typo__5;
 
   &:hover {
     color: #4183c4;
     text-decoration: none;
+  }
+
+  &.ext-pdf {
+    &:after {
+      content: "PDF";
+      background-color: $light-gray;
+      padding: 2px 5px;
+      line-height: normal;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      margin-left: 5px;
+      font-size: x-small;
+      position: absolute;
+      bottom: 6px;
+      text-decoration: none !important;
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
   }
 }
 
