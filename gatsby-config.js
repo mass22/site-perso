@@ -120,13 +120,10 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     //`gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-plugin-google-tagmanager`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        id: config.googleTagManagerId,
-
-        // Include GTM in development.
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false
+        trackingId: config.googleAnalyticsID,
+        head: true
       }
     },
     //Always last: Netlify

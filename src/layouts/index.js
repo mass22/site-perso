@@ -21,11 +21,6 @@ import "./main.scss";
 import C_Footer from "../components/Footer/Footer";
 import C_Header from "../components/Header/Header";
 
-import ReactGA from "react-ga";
-
-ReactGA.initialize("UA-130672302-1");
-ReactGA.pageview(window.location.pathname + window.location.search);
-
 const propTypes = {
   data: PropTypes.object.isRequired
 };
