@@ -33,6 +33,10 @@ const ArticleImg = styled(Img)`
   max-height: 400px;
 `;
 
+const ShareContainer = styled.div`
+  margin: 20px 0;
+`;
+
 class ArticleTemplate extends React.Component {
   render() {
     const article = this.props.data.contentfulArticles;
@@ -42,12 +46,14 @@ class ArticleTemplate extends React.Component {
       content: { content },
       createdAt,
       media,
+      slug,
       author: { name },
       author: { bio },
       author: { image }
     } = article;
 
     const metaTitle = { title };
+    const baseUrl = "https://www.russo-massimo.com/blogue/";
     return (
       <Container as="article" role="article">
         <Helmet>
@@ -69,11 +75,60 @@ class ArticleTemplate extends React.Component {
           <figcaption>{media.title}</figcaption>
         </figure>
         <MarkdownRenderer markdown={content} />
-        <Divider />
+        <ShareContainer>
+          <Button
+            color="linkedin"
+            as={"a"}
+            href={`http://www.linkedin.com/shareArticle?url=${baseUrl}${slug}&title=${title}&summary=${description}&source=${baseUrl}${slug}`}
+            target={"_blank"}
+          >
+            <Icon size="large" name="linkedin" />
+          </Button>
 
+          <Button
+            color="twitter"
+            as={"a"}
+            href={`http://twitter.com/share?url=${baseUrl}${slug}&text=${description}via=russo_massimo`}
+            target="_blank"
+          >
+            <Icon size="large" name="twitter" />
+          </Button>
+
+          <Button
+            color="facebook"
+            as={"a"}
+            href={`http://www.facebook.com/sharer/sharer.php?u=${baseUrl}${slug}`}
+            target="_blank"
+          >
+            <Icon size="large" name="facebook f" />
+          </Button>
+
+          <Button
+            color="google plus"
+            as={"a"}
+            href={`https://plus.google.com/share?url=${baseUrl}${slug}`}
+            target="_blank"
+          >
+            <Icon size="large" name="google plus" />
+          </Button>
+
+          <Button
+            color="grey"
+            as={"a"}
+            href={`mailto:?subject=${title}&body=${baseUrl}${slug}`}
+            target="_blank"
+          >
+            <Icon size="large" name="mail" />
+          </Button>
+        </ShareContainer>
+        <Divider />
         <Item.Group>
           <Item>
-            <Item.Image size="tiny" src={image.sizes.src} alt="image de test" />
+            <Item.Image
+              size="tiny"
+              src={image.sizes.src}
+              alt="Massimo Russo Logo"
+            />
             <Item.Content>
               <Item.Header as="cite">{name}</Item.Header>
               <Item.Meta as="time" style={{ display: "block" }}>
