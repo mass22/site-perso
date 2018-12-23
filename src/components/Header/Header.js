@@ -51,6 +51,14 @@ class C_Header extends React.Component {
           <Link to="/portfolio/" activeClassName={"active"} exact tabIndex="0">
             Portfolio
           </Link>
+          <Link
+            to="/competences/"
+            activeClassName={"active"}
+            exact
+            tabIndex="0"
+          >
+            Compétences
+          </Link>
           <Link to="/blogue/" activeClassName={"active"} exact tabIndex="0">
             Blogue
           </Link>
