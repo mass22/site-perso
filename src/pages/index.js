@@ -9,13 +9,15 @@ import MarkdownRenderer from "react-markdown-renderer";
 /** Style **/
 import styled from "styled-components";
 import * as palette from "../layouts/scss/variables";
-import { Item, Container, Segment, Grid, Image } from "semantic-ui-react";
-
-import Background from "../static/backgrounds/bg-home-2.jpeg";
+import { Item, Container, Segment, Grid } from "semantic-ui-react";
 
 const propTypes = {
   data: PropTypes.object.isRequired
 };
+
+const frTelechargement = "Téléchargez la version PDF";
+const frRecomtitle = "Ils ont dit...";
+const frRecomLink = "Voir le profil de l'auteur";
 
 const Recommandation = styled.article`
   border-top: 2px solid ${palette.DARK_GRAY};
@@ -200,7 +202,7 @@ class IndexPage extends React.Component {
             title={"CV Massimo Russo - PDF"}
             className={"ext-pdf"}
           >
-            Téléchargez la version PDF
+            {frTelechargement}
           </a>
         </Container>
 
@@ -322,7 +324,7 @@ class IndexPage extends React.Component {
 
         <Container fluid style={{ backgroundColor: "#fff" }}>
           <Container>
-            <h2>Ils ont dit...</h2>
+            <h2>{frRecomtitle}</h2>
             <Slider {...settings}>
               {[
                 frHomepage.node.recommendations.map((recommandation, i) => (
@@ -342,9 +344,7 @@ class IndexPage extends React.Component {
                           <Item.Description>
                             {recommandation.author}
                           </Item.Description>
-                          <a href={`${recommandation.link}`}>
-                            Voir le profil de l'auteur
-                          </a>
+                          <a href={`${recommandation.link}`}>{frRecomLink}</a>
                         </Item.Content>
                       </Item>
                     </Item.Group>
