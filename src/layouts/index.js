@@ -115,12 +115,12 @@ export default class TemplateWrapper extends React.Component {
                   <Responsive minWidth={640}>Portfolio</Responsive>
                 </Menu.Item>
               </Link>
-              <Link to="/competences/" activeClassName={"active"} exact>
+              {/* <Link to="/competences/" activeClassName={"active"} exact>
                 <Menu.Item name="cogs" className={"typo__6"}>
                   <Icon name="cogs" />
                   <Responsive minWidth={640}>Compétences</Responsive>
                 </Menu.Item>
-              </Link>
+              </Link> */}
               <Link to="/blogue/" activeClassName={"active"} exact>
                 <Menu.Item name="newspaper" className={"typo__6"}>
                   <Icon name="newspaper" />

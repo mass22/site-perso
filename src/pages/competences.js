@@ -16,9 +16,16 @@ const SkillsContainer = styled.div``;
 
 const SkillBox = styled.div`
   border-bottom: 1px solid ${palette.SHADOW};
+  margin-bottom: 20px;
+  padding-bottom: 20px;
   &:last-child {
     border-bottom: none;
+    margin-bottom: 0;
   }
+`;
+
+const ProgressBar = styled(Progress)`
+  margin-bottom: 1em !important;
 `;
 
 class CompetencesPage extends React.Component {
@@ -28,7 +35,7 @@ class CompetencesPage extends React.Component {
     const Skill = ({ node }) => (
       <SkillBox>
         <h3>{node.title}</h3>
-        <Progress percent={node.level} color="grey" size="small" active />
+        <ProgressBar percent={node.level} color="grey" size="small" active />
         <p>{node.description.description}</p>
       </SkillBox>
     );
@@ -51,13 +58,11 @@ class CompetencesPage extends React.Component {
             </Grid.Column>
             <Grid.Column width={6}>
               <h2>Autre</h2>
-              <h3>Divers</h3>
+              <h3>Notions</h3>
               <ul>
                 <li>TypeScript</li>
-                <li>Responsive Design</li>
                 <li>WCAG 2.0</li>
-                <li>PHP</li>
-                <li>Notions de C#</li>
+                <li>C#</li>
               </ul>
               <h3>Langues</h3>
               <ul>
