@@ -9,7 +9,7 @@ import MarkdownRenderer from "react-markdown-renderer";
 /** Style **/
 import styled from "styled-components";
 import * as palette from "../layouts/scss/variables";
-import { Item, Container, Segment, Grid } from "semantic-ui-react";
+import { Item, Container, Segment, Grid, Card, Icon } from "semantic-ui-react";
 
 const propTypes = {
   data: PropTypes.object.isRequired
@@ -18,6 +18,8 @@ const propTypes = {
 const frTelechargement = "Téléchargez la version PDF";
 const frRecomtitle = "Ils ont dit...";
 const frRecomLink = "Voir le profil de l'auteur";
+const frDernierArticle = "Dernier article";
+const frLireArticle = "Lire article";
 
 const Recommandation = styled.article`
   border-top: 2px solid ${palette.DARK_GRAY};
@@ -74,6 +76,20 @@ const Svg = styled.svg`
   width: 100%;
 `;
 
+const LastArticleContainer = styled.article`
+  &:hover {
+    box-shadow: 0px 0px 10px 2px ${palette.SHADOW};
+    border-radius: 0.28571429rem;
+  }
+  a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87) !important;
+    &:hover {
+      color: rgba(0, 0, 0, 0.87) !important;
+    }
+  }
+`;
+
 class IndexPage extends React.Component {
   render() {
     const settings = {
@@ -93,6 +109,8 @@ class IndexPage extends React.Component {
     const frHomepage = this.props.data.fr.edges[0];
 
     const bg = this.props.data.bg.edges[0].node.sizes;
+
+    const lastArticle = this.props.data.lastFr.edges[0].node;
 
     const HOMEPAGE = ({ node }) => (
       <div>
@@ -192,18 +210,25 @@ class IndexPage extends React.Component {
         </Segment>
 
         <Container>
-          <MarkdownRenderer
-            markdown={frHomepage.node.content.content}
-            style={{ marginBottom: 10 }}
-          />
-          <a
-            href={require("../static/files/CV_Massimo_RUSSO.pdf")}
-            target={"_blank"}
-            title={"CV Massimo Russo - PDF"}
-            className={"ext-pdf"}
-          >
-            {frTelechargement}
-          </a>
+          <Grid stackable columns={2}>
+            <Grid.Column width={10}>
+              <MarkdownRenderer
+                markdown={frHomepage.node.content.content}
+                style={{ marginBottom: 10 }}
+              />
+              <a
+                href={require("../static/files/CV_Massimo_RUSSO.pdf")}
+                target={"_blank"}
+                title={"CV Massimo Russo - PDF"}
+                className={"ext-pdf"}
+              >
+                {frTelechargement}
+              </a>
+            </Grid.Column>
+            <Grid.Column width={6}>
+              <LASTARTICLE />
+            </Grid.Column>
+          </Grid>
         </Container>
 
         <Container fluid style={{ backgroundColor: `${palette.SHADOW}` }}>
@@ -357,6 +382,36 @@ class IndexPage extends React.Component {
       </div>
     );
 
+    const LASTARTICLE = ({ node }) => (
+      <div className="last-article">
+        <h2>{frDernierArticle}</h2>
+        <LastArticleContainer>
+          <Link to={`/blogue/${lastArticle.slug}/`}>
+            <Card>
+              <Img
+                src={lastArticle.media.sizes.src}
+                style={{
+                  margin: 0
+                }}
+                sizes={lastArticle.media.sizes}
+              />
+              <Card.Content>
+                <Card.Header>{lastArticle.title}</Card.Header>
+                <Card.Meta>{lastArticle.createdAt}</Card.Meta>
+                <Card.Description>{lastArticle.description}</Card.Description>
+              </Card.Content>
+              {/* <Card.Content extra>
+                <a>
+                  <Icon name="user" />
+                  10 Friends
+                </a>
+              </Card.Content> */}
+            </Card>
+          </Link>
+        </LastArticleContainer>
+      </div>
+    );
+
     return (
       <div>
         <Helmet>
@@ -403,6 +458,30 @@ export const pageQuery = graphql`
             src
             srcSet
             sizes
+          }
+        }
+      }
+    }
+    lastFr: allContentfulArticles(
+      filter: { node_locale: { eq: "fr-CA" } }
+      sort: { fields: [createdAt], order: DESC }
+      limit: 1
+    ) {
+      edges {
+        node {
+          id
+          title
+          description
+          slug
+          createdAt(formatString: "DD MMM, YYYY")
+          media {
+            sizes(maxWidth: 100) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
           }
         }
       }

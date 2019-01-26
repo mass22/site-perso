@@ -27,6 +27,7 @@ h2 {
 h3 {
   @extend .typo__4;
   @include fluid(( "property": "margin-bottom", $xs: 10px, $sm: 10px, $md: 15px, $lg: 15px, $xlg: 15px, $xxlg: 25px ));
+  font-weight: bold;
 }
 
 h4 {
@@ -173,5 +174,20 @@ header .ui.container,
 article {
   .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
     margin: auto;
+  }
+}
+
+.last-article {
+  h2 {
+    line-height: 1;
+  }
+  .ui.cards > .card,
+  .ui.card {
+    width: 100%;
+  }
+
+  .ui.cards > .card > .content,
+  .ui.card > .content {
+    border-top: none;
   }
 }
