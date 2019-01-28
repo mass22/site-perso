@@ -176,19 +176,3 @@ article {
     margin: auto;
   }
 }
-
-.last-article {
-  h2 {
-    line-height: 1;
-  }
-  .ui.cards > .card,
-  .ui.card {
-    width: 100%;
-  }
-
-  .ui.cards > .card > .content,
-  .ui.card > .content {
-    border-top: none;
-    box-shadow: 0px -5px 0px 0px $turquoise inset;
-  }
-}

@@ -19,7 +19,7 @@ const frTelechargement = "Téléchargez la version PDF";
 const frRecomtitle = "Ils ont dit...";
 const frRecomLink = "Voir le profil de l'auteur";
 const frDernierArticle = "Dernier article";
-const frLireArticle = "Lire article";
+const frLireArticle = "Lire l'article";
 
 const Recommandation = styled.article`
   border-top: 2px solid ${palette.DARK_GRAY};
@@ -35,7 +35,7 @@ const BgImage = styled(Img)`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: -1;
+  z-index: 0;
   height: 100vh; // or whatever
 
   // Adjust image positioning (if image covers area with defined height) and add font-family for polyfill
@@ -80,12 +80,40 @@ const LastArticleContainer = styled.article`
   &:hover {
     box-shadow: 0px 0px 10px 2px ${palette.SHADOW};
     border-radius: 0.28571429rem;
+    span.ui.button {
+      background-color: #cacbcd;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    .ui.cards > .card > .extra,
+    .ui.card > .extra {
+      box-shadow: 0px -5px 0px 0px #85bee2 inset;
+    }
   }
   a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.87) !important;
     &:hover {
       color: rgba(0, 0, 0, 0.87) !important;
+    }
+  }
+`;
+
+const AsideLastArticle = styled.aside`
+  h2 {
+    line-height: 1;
+  }
+  .ui.cards > .card,
+  .ui.card {
+    width: 100%;
+  }
+
+  .ui.cards > .card > .extra,
+  .ui.card > .extra {
+    border-top: none;
+    box-shadow: 0px -5px 0px 0px ${palette.TURQUOISE} inset;
+
+    &:hover {
+      box-shadow: 0px -5px 0px 0px #85bee2 inset;
     }
   }
 `;
@@ -211,7 +239,7 @@ class IndexPage extends React.Component {
 
         <Container>
           <Grid stackable columns={2}>
-            <Grid.Column width={10}>
+            <Grid.Column width={11}>
               <MarkdownRenderer
                 markdown={frHomepage.node.content.content}
                 style={{ marginBottom: 10 }}
@@ -225,7 +253,7 @@ class IndexPage extends React.Component {
                 {frTelechargement}
               </a>
             </Grid.Column>
-            <Grid.Column width={6}>
+            <Grid.Column width={5}>
               <LASTARTICLE />
             </Grid.Column>
           </Grid>
@@ -383,7 +411,7 @@ class IndexPage extends React.Component {
     );
 
     const LASTARTICLE = ({ node }) => (
-      <div className="last-article">
+      <AsideLastArticle>
         <h2>{frDernierArticle}</h2>
         <LastArticleContainer>
           <Link to={`/blogue/${lastArticle.slug}/`}>
@@ -400,16 +428,15 @@ class IndexPage extends React.Component {
                 <Card.Meta>{lastArticle.createdAt}</Card.Meta>
                 <Card.Description>{lastArticle.description}</Card.Description>
               </Card.Content>
-              {/* <Card.Content extra>
-                <a>
-                  <Icon name="user" />
-                  10 Friends
-                </a>
-              </Card.Content> */}
+              <Card.Content extra>
+                <span className="ui fluid icon right labeled button">
+                  {frLireArticle}
+                </span>
+              </Card.Content>
             </Card>
           </Link>
         </LastArticleContainer>
-      </div>
+      </AsideLastArticle>
     );
 
     return (
