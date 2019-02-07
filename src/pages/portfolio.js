@@ -173,7 +173,7 @@ class WorksPage extends React.Component {
               {[node.tags.map((tag, i) => <Tags>{`${tag.name}`}</Tags>)]}
             </TagList>
           </WorkBottom>
-          <Modal
+          {/* <Modal
             trigger={<Button className={"U--W--100"}>Voir plus</Button>}
             closeIcon
           >
@@ -197,7 +197,7 @@ class WorksPage extends React.Component {
               </Modal.Description>
               {this.isLink(node.link)}
             </Modal.Content>
-          </Modal>
+          </Modal> */}
         </div>
       </WorkItem>
     );
