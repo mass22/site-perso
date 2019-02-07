@@ -17,7 +17,7 @@ const propTypes = {
 
 const frTelechargement = "Téléchargez la version PDF";
 const frRecomtitle = "Ils ont dit...";
-const frRecomLink = "Voir le profil de l'auteur";
+const frRecomLink = "Voir le profil de ";
 const frDernierArticle = "Dernier article";
 const frLireArticle = "Lire l'article";
 
@@ -381,23 +381,26 @@ class IndexPage extends React.Component {
             <Slider {...settings}>
               {[
                 frHomepage.node.recommendations.map((recommandation, i) => (
-                  <Recommandation>
+                  <Recommandation className="C--recommandations">
                     <Item.Group unstackable>
                       <Item>
                         <Item.Image
                           size="tiny"
-                          style={{ maxWidth: 40 }}
-                          src={require("../static/logos/LinkedIn_logo.png")}
-                          alt="LinkedIn"
+                          style={{ maxWidth: 80 }}
+                          src={recommandation.photo.sizes.src}
+                          alt={recommandation.author}
                         />
                         <Item.Content>
                           <Item.Header>
                             "{recommandation.content.content}"
                           </Item.Header>
                           <Item.Description>
-                            {recommandation.author}
+                            {recommandation.author} - {recommandation.position}
                           </Item.Description>
-                          <a href={`${recommandation.link}`}>{frRecomLink}</a>
+                          <a href={`${recommandation.link}`}>
+                            {frRecomLink}
+                            {recommandation.author.split(" ", 1)}
+                          </a>
                         </Item.Content>
                       </Item>
                     </Item.Group>
@@ -471,6 +474,16 @@ export const pageQuery = graphql`
               content
             }
             link
+            position
+            photo {
+              sizes(maxWidth: 100) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
+            }
           }
         }
       }

@@ -59,7 +59,6 @@ const Date = styled.p`
   align-self: center;
   font-style: italic;
 `;
-const Description = styled.p``;
 const Company = styled.span`
   display: inline;
   text-transform: uppercase;
@@ -123,7 +122,13 @@ class WorksPage extends React.Component {
   isLink(link) {
     if (link) {
       return (
-        <Button basic as={"a"} href={link} target="_blank">
+        <Button
+          basic
+          as={"a"}
+          href={link}
+          target="_blank"
+          className="U--W--100"
+        >
           <Icon name="world" /> Voir le site
         </Button>
       );
@@ -153,9 +158,9 @@ class WorksPage extends React.Component {
               />
             ))
           ]}
-          <Description>
+          <div>
             <MarkdownRenderer markdown={node.description.description} />
-          </Description>
+          </div>
         </WorkTop>
         <div>
           <WorkBottom>
