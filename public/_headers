@@ -6,3 +6,75 @@
   X-Content-Type-Options: nosniff
 /static/*
   Cache-Control: max-age=31536000
+/offline-plugin-app-shell-fallback/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
+  Link: </component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/blogue/pourquoi-choisir-jamstack/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---blogue-pourquoi-choisir-jamstack-39e518703ea538d5d4f5.js>; rel=preload; as=script
+  Link: </component---src-templates-article-js-8a9ccf3c120c1aaddc2d.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/blogue/nouveau-site/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---blogue-nouveau-site-72715b3dd3564fa314b2.js>; rel=preload; as=script
+  Link: </component---src-templates-article-js-8a9ccf3c120c1aaddc2d.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/blogue/team-building-champion/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---blogue-team-building-champion-0ad4ac092be6846f69eb.js>; rel=preload; as=script
+  Link: </component---src-templates-article-js-8a9ccf3c120c1aaddc2d.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/404/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---404-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
+  Link: </component---src-pages-404-js-b0c0f06dd3f953c2a2b7.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/blogue/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---blogue-a0e05800f209f1aadb9b.js>; rel=preload; as=script
+  Link: </component---src-pages-blogue-js-5639b24349916edf861f.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/competences/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---competences-6fe3178e1a7edfee47c8.js>; rel=preload; as=script
+  Link: </component---src-pages-competences-js-e3b555e7f46a4fa2c9f5.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/contact/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---contact-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
+  Link: </component---src-pages-contact-js-c5bc85c95ffbcab2f66e.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---index-b8fc8417251a2a1b8eaa.js>; rel=preload; as=script
+  Link: </component---src-pages-index-js-b0586d74422dcdbfe4e3.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/merci/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---merci-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
+  Link: </component---src-pages-merci-js-e040dad6df233bae4a60.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/portfolio/
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---portfolio-35314dd185c8a3bc4e5c.js>; rel=preload; as=script
+  Link: </component---src-pages-portfolio-js-d675a92ccac00f55fb8e.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
+/404.html
+  Link: </commons-e1d5c90d1776f9e0e2d4.js>; rel=preload; as=script
+  Link: </app-6c4169be20ac4499f871.js>; rel=preload; as=script
+  Link: </path---404-html-a0e39f21c11f6a62c5ab.js>; rel=preload; as=script
+  Link: </component---src-pages-404-js-b0c0f06dd3f953c2a2b7.js>; rel=preload; as=script
+  Link: </component---src-layouts-index-js-460857b9d83ae41c88ee.js>; rel=preload; as=script
