@@ -1,1 +1,42 @@
-{"name":"Massimo Russo","short_name":"Massimo Russo","start_url":"/","background_color":"#f7f0eb","theme_color":"#a2466c","display":"minimal-ui","gcm_sender_id_comment":"For OneSignal Web Push Notifications, Do Not Change ID","gcm_sender_id":"c8d5d2c0-c2d6-47f6-8e0f-70f06b1bde7d","icons":[{"src":"/favicons/favicon.png","sizes":"16x16","type":"image/png"}]}
+{
+  "background_color": "#f7f0eb",
+  "display": "minimal-ui",
+  "gcm_sender_id": "c8d5d2c0-c2d6-47f6-8e0f-70f06b1bde7d",
+  "gcm_sender_id_comment": "For OneSignal Web Push Notifications, Do Not Change ID",
+  "icons": [
+    {
+      "src": "/favicons/favicon.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "main.css": "styles.css",
+  "main.js": "render-page.js",
+  "main.js.map": "render-page.js.map",
+  "name": "Massimo Russo",
+  "short_name": "Massimo Russo",
+  "start_url": "/",
+  "static/CV_Massimo_RUSSO.pdf": "static/CV_Massimo_RUSSO.65e9aa0d.pdf",
+  "static/LinkedIn_logo.png": "static/LinkedIn_logo.f08c524d.png",
+  "static/brand-icons.eot": "static/brand-icons.13db00b7.eot",
+  "static/brand-icons.svg": "static/brand-icons.a1a749e8.svg",
+  "static/brand-icons.ttf": "static/brand-icons.c5ebe0b3.ttf",
+  "static/brand-icons.woff": "static/brand-icons.a046592b.woff",
+  "static/brand-icons.woff2": "static/brand-icons.e8c322de.woff2",
+  "static/flags.png": "static/flags.9c74e172.png",
+  "static/icons.eot": "static/icons.8e3c7f55.eot",
+  "static/icons.svg": "static/icons.962a1bf3.svg",
+  "static/icons.ttf": "static/icons.b87b9ba5.ttf",
+  "static/icons.woff": "static/icons.faff9214.woff",
+  "static/icons.woff2": "static/icons.0ab54153.woff2",
+  "static/logo.png": "static/logo.99dd35e7.png",
+  "static/outline-icons.eot": "static/outline-icons.701ae6ab.eot",
+  "static/outline-icons.svg": "static/outline-icons.82f60bd0.svg",
+  "static/outline-icons.ttf": "static/outline-icons.ad97afd3.ttf",
+  "static/outline-icons.woff": "static/outline-icons.ef60a4f6.woff",
+  "static/outline-icons.woff2": "static/outline-icons.cd6c777f.woff2",
+  "static/slick.eot": "static/slick.ced611da.eot",
+  "static/slick.ttf": "static/slick.d41f55a7.ttf",
+  "static/slick.woff": "static/slick.b7c9e1e4.woff",
+  "theme_color": "#a2466c"
+}

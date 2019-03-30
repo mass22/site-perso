@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/app-035c49d4b9c7a5238c86.js","5456dd784b26140d0b0642977fee5b84"],["/app-1ebd54fc2cfaed8871f1.js","ba3f48e47683e2a2df31f356136cbb12"],["/app-2de2fe396433f17e9984.js","6be5986e3309aa20ccd3c3b0f8c967ac"],["/app-746a70c6153e99904404.js","8bc66d2fc8c49e795b08ac09801759dc"],["/app-7c5cf6a9b1c9631c7b1c.js","c45da12488741f935d832a9081c19489"],["/app-7f4e2a99114a148789fc.js","a8a21bdcc903273bb91b0a15cf57332b"],["/app-92b35105c89036218804.js","d7775c9781fd0f05f2d913e84cca2c58"],["/app-bb7792735409569e1233.js","47c95e7c3f7268dfd6ea7d76a8aaf0ac"],["/app-cdc5bf018409f5f433da.js","fb9f0fba1d5382649028e5c2f39808b6"],["/app-ec37e1e905fcee53b225.js","1502eddd29a4cb093ada981c9308aacf"],["/app-ef48ee9fa90486b26b1e.js","6f2242bd125c33ac250eabf935d8e9f9"],["/app-f38b206d8826c64e46de.js","0d07aa01faad25872318bd3299853963"],["/commons-40daf49e58607da56280.js","bbea2468e0a343744f3e485bbd5fd208"],["/commons-6309eb4b52bfe40afe54.js","fc40891dd509934d1a85c94b0ba1c052"],["/commons-758207f5d551e485a428.js","2bdfcb22d8bd75185ef28627fcc5f368"],["/commons-79baf21cb474f27d4109.js","baa032d52b7914e201919942c62b5bf5"],["/commons-890be1bfa723b3a8f320.js","d614a8630063d289d4df8803e3bd4cea"],["/commons-8f63ea920b1660ba86ba.js","eb25b7917f6b86f80925da8854a1bc3a"],["/commons-de615eb22f0d5178b4a1.js","6f2defbf6ff62422fc96b03b00a8de19"],["/commons-e14e29c0f6bd9eee430d.js","53c3740528c1db7711c161548200f0ed"],["/commons-ef1794f23dc416bac0c4.js","349a286f1f2c743750eea31c4596aeda"],["/index.html","4592a8cedb67bdba5dd862ff15800987"],["/manifest.json","c54bfc20b1508282a4e9a365add249e1"],["/offline-plugin-app-shell-fallback/index.html","c129e1fb60439594e7270b2cb8771e25"]];
+var precacheConfig = [["/app-035c49d4b9c7a5238c86.js","5456dd784b26140d0b0642977fee5b84"],["/app-1ebd54fc2cfaed8871f1.js","ba3f48e47683e2a2df31f356136cbb12"],["/app-2de2fe396433f17e9984.js","6be5986e3309aa20ccd3c3b0f8c967ac"],["/app-6c4169be20ac4499f871.js","ebf72168824d3ad8a536e10ca67779a8"],["/app-746a70c6153e99904404.js","8bc66d2fc8c49e795b08ac09801759dc"],["/app-7c5cf6a9b1c9631c7b1c.js","c45da12488741f935d832a9081c19489"],["/app-7f4e2a99114a148789fc.js","a8a21bdcc903273bb91b0a15cf57332b"],["/app-92b35105c89036218804.js","d7775c9781fd0f05f2d913e84cca2c58"],["/app-bb7792735409569e1233.js","47c95e7c3f7268dfd6ea7d76a8aaf0ac"],["/app-cdc5bf018409f5f433da.js","fb9f0fba1d5382649028e5c2f39808b6"],["/app-ec37e1e905fcee53b225.js","1502eddd29a4cb093ada981c9308aacf"],["/app-ef48ee9fa90486b26b1e.js","6f2242bd125c33ac250eabf935d8e9f9"],["/app-f38b206d8826c64e46de.js","0d07aa01faad25872318bd3299853963"],["/commons-40daf49e58607da56280.js","bbea2468e0a343744f3e485bbd5fd208"],["/commons-6309eb4b52bfe40afe54.js","fc40891dd509934d1a85c94b0ba1c052"],["/commons-758207f5d551e485a428.js","2bdfcb22d8bd75185ef28627fcc5f368"],["/commons-79baf21cb474f27d4109.js","baa032d52b7914e201919942c62b5bf5"],["/commons-890be1bfa723b3a8f320.js","d614a8630063d289d4df8803e3bd4cea"],["/commons-8f63ea920b1660ba86ba.js","eb25b7917f6b86f80925da8854a1bc3a"],["/commons-de615eb22f0d5178b4a1.js","6f2defbf6ff62422fc96b03b00a8de19"],["/commons-e14e29c0f6bd9eee430d.js","53c3740528c1db7711c161548200f0ed"],["/commons-e1d5c90d1776f9e0e2d4.js","6fbbd13e53147cd900043fdb00c5f759"],["/commons-ef1794f23dc416bac0c4.js","349a286f1f2c743750eea31c4596aeda"],["/index.html","200b323d6af8f62c2197f2503e2f1b1d"],["/manifest.json","350a75f6029c217caa850fc342250d22"],["/manifest.webmanifest","c54bfc20b1508282a4e9a365add249e1"],["/offline-plugin-app-shell-fallback/index.html","4430cb0b05af02fd02985fb230920583"]];
 var cacheName = 'sw-precache-v3-gatsby-plugin-offline-' + (self.registration ? self.registration.scope : '');
 
 
@@ -45,7 +45,7 @@ var ignoreUrlParametersMatching = [/^utm_/];
 
 
 
-var addDirectoryIndex = function (originalUrl, index) {
+var addDirectoryIndex = function(originalUrl, index) {
     var url = new URL(originalUrl);
     if (url.pathname.slice(-1) === '/') {
       url.pathname += index;
@@ -53,7 +53,7 @@ var addDirectoryIndex = function (originalUrl, index) {
     return url.toString();
   };
 
-var cleanResponse = function (originalResponse) {
+var cleanResponse = function(originalResponse) {
     // If this is not a redirected response, then we don't have to do anything.
     if (!originalResponse.redirected) {
       return Promise.resolve(originalResponse);
@@ -75,7 +75,7 @@ var cleanResponse = function (originalResponse) {
     });
   };
 
-var createCacheKey = function (originalUrl, paramName, paramValue,
+var createCacheKey = function(originalUrl, paramName, paramValue,
                            dontCacheBustUrlsMatching) {
     // Create a new URL object to avoid modifying originalUrl.
     var url = new URL(originalUrl);
@@ -91,7 +91,7 @@ var createCacheKey = function (originalUrl, paramName, paramValue,
     return url.toString();
   };
 
-var isPathWhitelisted = function (whitelist, absoluteUrlString) {
+var isPathWhitelisted = function(whitelist, absoluteUrlString) {
     // If the whitelist is empty, then consider all URLs to be whitelisted.
     if (whitelist.length === 0) {
       return true;
@@ -104,7 +104,7 @@ var isPathWhitelisted = function (whitelist, absoluteUrlString) {
     });
   };
 
-var stripIgnoredUrlParameters = function (originalUrl,
+var stripIgnoredUrlParameters = function(originalUrl,
     ignoreUrlParametersMatching) {
     var url = new URL(originalUrl);
     // Remove the hash; see https://github.com/GoogleChrome/sw-precache/issues/290
