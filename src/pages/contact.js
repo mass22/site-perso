@@ -69,7 +69,7 @@ class ContactPage extends React.Component {
               control={Input}
               name="name"
               label="Votre nom"
-              placeholder="John Doe"
+              placeholder="John Dorito"
               onChange={this.handleChange}
               required
             />
@@ -78,7 +78,7 @@ class ContactPage extends React.Component {
               control={Input}
               name="email"
               label="Votre email:"
-              placeholder="jdoe@company.com"
+              placeholder="jdorito@company.com"
               onChange={this.handleChange}
               type="email"
               required
