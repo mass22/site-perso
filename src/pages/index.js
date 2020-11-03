@@ -15,7 +15,7 @@ const propTypes = {
   data: PropTypes.object.isRequired
 };
 
-const frTelechargement = "Téléchargez la version PDF";
+const frTelechargement = "Téléchargez la version PDF (version mars 2019)";
 const frRecomtitle = "Ils ont dit...";
 const frRecomLink = "Voir le profil de ";
 const frDernierArticle = "Dernier article";
@@ -74,6 +74,8 @@ const Svg = styled.svg`
   max-height: 150px;
   max-width: 150px;
   width: 100%;
+  min-width: 150px;
+  min-height: 150px;
 `;
 
 const LastArticleContainer = styled.article`
@@ -350,6 +352,22 @@ class IndexPage extends React.Component {
                 </Svg>
               </Grid.Column>
               <Grid.Column mobile={8} tablet={8} computer={4}>
+                <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+                  <defs/>
+                  <path fill="#dd0031" d="M125 30L31.9 63.2l14.2 123.1L125 230l78.9-43.7 14.2-123.1z"/>
+                  <path fill="#c3002f" d="M125 30v22.2-.1V230l78.9-43.7 14.2-123.1L125 30z"/>
+                  <path fill="#fff" d="M125 52.1L66.8 182.6h21.7l11.7-29.2h49.4l11.7 29.2H183L125 52.1zm17 83.3h-34l17-40.9 17 40.9z"/>
+                </Svg>
+              </Grid.Column>
+              <Grid.Column mobile={8} tablet={8} computer={4}>
+                <Svg xmlns="http://www.w3.org/2000/svg" class="NuxtLogo" viewBox="0 0 452 342">
+                  <defs/>
+                  <path fill="#00C58E" d="M139 330l-1-2c-2-4-2-8-1-13H29L189 31l67 121 22-16-67-121c-1-2-9-14-22-14-6 0-15 2-22 15L5 303c-1 3-8 16-2 27 4 6 10 12 24 12h136c-14 0-21-6-24-12z"/>
+                  <path fill="#108775" d="M447 304L317 70c-2-2-9-15-22-15-6 0-15 3-22 15l-17 28v54l39-67 129 230h-49a23 23 0 01-2 14l-1 1c-6 11-21 12-23 12h76c3 0 17-1 24-12 3-5 5-14-2-26z"/>
+                  <path fill="#2F495E" d="M376 330v-1l1-2c1-4 2-8 1-12l-4-12-102-178-15-27h-1l-15 27-102 178-4 12a24 24 0 002 15c4 6 10 12 24 12h190c3 0 18-1 25-12zM256 152l93 163H163l93-163z"/>
+                </Svg>
+              </Grid.Column>
+              <Grid.Column mobile={8} tablet={8} computer={4}>
                 <Svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 250 260"
@@ -370,6 +388,12 @@ class IndexPage extends React.Component {
                     <path d="M360.49 234.3v-4.34h4.33l56.4-.54c-2.7-43.4-35.24-81.9-35.24-81.9l-62.92 39.05s40.14 29.83 3.8 100.88c-12.47 24.94-40.13 51.52-65.08 62.9-30.37 14.1-54.23 15.2-54.23 15.2 3.25 1.08 32.54 7.04 74.3-11.4 81.35-35.79 78.63-116.6 78.63-119.85z" />
                   </g>
                 </Svg>
+              </Grid.Column>
+              <Grid.Column mobile={8} tablet={8} computer={4}>
+              <Svg xmlns="http://www.w3.org/2000/svg" viewBox="-153 -46 652 652">
+  <defs/>
+  <path fill="#f05a22" d="M-126.7 184.6H62.6v189.3h-189.3V184.6zm94.6 80.7c-7.7 0-14 6.3-14 14 0 5.7 3.4 10.8 8.6 12.9 5.2 2.2 11.2 1 15.2-3s5.2-10 3-15.2c-2-5.3-7.1-8.7-12.8-8.7m36 4.3c-12 0-11.7 19.2.1 19.2h21.5c12.2 0 10.2-14.5 9.5-18.3-.1-.5-.6-.9-1.1-.9h-30M-68 288.8c12 0 11.7-19.2-.1-19.2h-21.5c-12.2 0-10.2 14.5-9.5 18.3.1.5.6.9 1.1.9h30m54.5-41.8c-8.4 8.4 5.3 21.8 13.7 13.5l15.2-15.2c8.6-8.6-3-17.5-6.2-19.6-.5-.3-1.1-.3-1.5.1L-13.5 247m-37.2 64.4c8.4-8.4-5.3-21.8-13.7-13.5l-15.2 15.2c-8.6 8.6 3 17.4 6.2 19.6.5.3 1.1.2 1.5-.1l21.2-21.2m9-68.2c0 12 19.2 11.7 19.2-.1v-21.5c0-12.2-14.5-10.2-18.3-9.5-.5.1-.9.6-.9 1.1v30m19.2 72c0-12-19.2-11.7-19.2.1v21.5c0 12.2 14.5 10.2 18.3 9.5.5-.1.9-.6.9-1.1v-30m-41.8-54.6c8.4 8.5 21.8-5.3 13.5-13.7L-66 231.7c-8.6-8.6-17.5 3-19.6 6.2-.3.5-.3 1.1.1 1.4l21.2 21.3M.1 297.8c-8.4-8.5-21.8 5.3-13.5 13.7l15.2 15.2c8.6 8.6 17.5-3 19.6-6.2.3-.5.3-1.1-.1-1.4L.1 297.8"/>
+</Svg>
               </Grid.Column>
             </Grid>
           </Container>
