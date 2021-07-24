@@ -15,7 +15,7 @@ const propTypes = {
   data: PropTypes.object.isRequired
 };
 
-const frTelechargement = "Téléchargez la version PDF (version mars 2019)";
+const frTelechargement = "Téléchargez la version PDF (version juillet 2021)";
 const frRecomtitle = "Ils ont dit...";
 const frRecomLink = "Voir le profil de ";
 const frDernierArticle = "Dernier article";
