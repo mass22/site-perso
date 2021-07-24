@@ -143,7 +143,7 @@ class WorksPage extends React.Component {
     let button = null;
 
     const WORKS = ({ node }) => (
-      <WorkItem>
+      <WorkItem tabIndex="0">
         <WorkTop>
           <WorkHeader>
             <Title className={"typo__3"}>{node.name}</Title>
@@ -155,6 +155,8 @@ class WorksPage extends React.Component {
                 src={image.sizes.src}
                 sizes={image.sizes}
                 className={"worksImg"}
+                alt={image.title}
+                tabIndex="1"
               />
             ))
           ]}
@@ -254,6 +256,7 @@ export const pageWorksQuery = graphql`
               srcSet
               sizes
             }
+            title
           }
         }
       }
