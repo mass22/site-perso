@@ -31,7 +31,7 @@ module.exports = {
   //     }
   //   ],
   googleTagManagerId: "GTM-5BM5SNS",
-  copyright: "Copyright © 2020. Massimo Russo" // Copyright string for the footer of the website and RSS feed.
+  copyright: "Copyright © 2021. Massimo Russo" // Copyright string for the footer of the website and RSS feed.
   // themeColor: "#c62828", // Used for setting manifest and progress theme colors.
   // backgroundColor: "#e0e0e0" // Used for setting manifest background color.
 };
