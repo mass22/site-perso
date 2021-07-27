@@ -210,6 +210,7 @@ class WorksPage extends React.Component {
           <title>{`Portfolio | ${config.siteTitle}`}</title>
         </Helmet>
         <h1>Portfolio</h1>
+        <p>{ frWorks.length } projets</p>
         <Grid stackable stretched columns={2}>
           {frWorks.map(({ node }, i) => (
             <Grid.Column key={node.id}>
