@@ -8,10 +8,8 @@ import {
   Icon,
   Container,
   Item,
-  Image,
   Header,
   Divider,
-  Segment
 } from "semantic-ui-react";
 import styled from "styled-components";
 import MarkdownRenderer from "react-markdown-renderer";
@@ -21,12 +19,6 @@ import * as PropTypes from "prop-types";
 const propTypes = {
   data: PropTypes.object.isRequired
 };
-
-const AuthorBloc = styled(Header)`
-  padding: 20px !important;
-  border: 1px solid #ccc !important;
-  border-radius: 4px;
-`;
 
 const ArticleImg = styled(Img)`
   max-width: 500px;
@@ -52,7 +44,6 @@ class ArticleTemplate extends React.Component {
       author: { image }
     } = article;
 
-    const metaTitle = { title };
     const baseUrl = "https://www.russo-massimo.com/blogue/";
     return (
       <Container as="article" role="article">

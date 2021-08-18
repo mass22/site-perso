@@ -1,19 +1,13 @@
 import React from "react";
-import Link from "gatsby-link";
 import Img from "gatsby-image";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 import * as PropTypes from "prop-types";
 import MarkdownRenderer from "react-markdown-renderer";
-/** Style **/
 import styled from "styled-components";
 import * as palette from "../layouts/scss/variables";
 import {
   Grid,
-  Button,
-  Icon,
-  Modal,
-  Header,
   Container,
   Divider
 } from "semantic-ui-react";
@@ -101,42 +95,11 @@ const CoverImg = styled(Img)`
   }
 `;
 
-const ModalImg = styled(Img)`
-  img {
-    object-fit: contain !important;
-  }
-`;
-
-const NoLink = styled.p`
-  padding: 10px;
-  border: 1px solid ${palette.SHADOW};
-  margin-top: 10px;
-  text-align: center;
-`;
-
 const propTypes = {
   data: PropTypes.object.isRequired
 };
 
 class WorksPage extends React.Component {
-  isLink(link) {
-    if (link) {
-      return (
-        <Button
-          basic
-          as={"a"}
-          href={link}
-          target="_blank"
-          className="U--W--100"
-        >
-          <Icon name="world" /> Voir le site
-        </Button>
-      );
-    } else {
-      return <NoLink>Le site n'est plus en ligne</NoLink>;
-    }
-  }
-
   render() {
     const frWorks = this.props.data.fr.edges;
 
@@ -175,31 +138,6 @@ class WorksPage extends React.Component {
               {[node.tags.map((tag, i) => <Tags>{`${tag.name}`}</Tags>)]}
             </TagList>
           </WorkBottom>
-          {/* <Modal
-            trigger={<Button className={"U--W--100"}>Voir plus</Button>}
-            closeIcon
-          >
-            <Modal.Header>{node.name}</Modal.Header>
-            <Modal.Content>
-              <Modal.Description>
-                <Header>Employeur: {node.company}</Header>
-                {[
-                  node.media.map((image, i) => (
-                    <ModalImg
-                      src={image.sizes.src}
-                      style={{
-                        margin: 0,
-                        height: 450
-                      }}
-                      sizes={image.sizes}
-                      className={"worksImg"}
-                    />
-                  ))
-                ]}
-              </Modal.Description>
-              {this.isLink(node.link)}
-            </Modal.Content>
-          </Modal> */}
         </div>
       </WorkItem>
     );

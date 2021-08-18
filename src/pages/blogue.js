@@ -5,8 +5,7 @@ import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
 /** Style **/
 import styled from "styled-components";
-import * as palette from "../layouts/scss/variables";
-import { Button, Icon, Container } from "semantic-ui-react";
+import { Button, Container } from "semantic-ui-react";
 
 import * as PropTypes from "prop-types";
 

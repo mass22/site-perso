@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import Link from "gatsby-link";
-import Img from "gatsby-image";
 import styled from "styled-components";
 import * as palette from "../../layouts/scss/variables";
-import { Responsive, Button, Icon, Container } from "semantic-ui-react";
+import { Responsive, Container } from "semantic-ui-react";
 import "./style/header.scss";
 
 const Header = styled.section`
@@ -51,14 +49,6 @@ class C_Header extends React.Component {
           <Link to="/portfolio/" activeClassName={"active"} exact tabIndex="0">
             Portfolio
           </Link>
-          {/* <Link
-            to="/competences/"
-            activeClassName={"active"}
-            exact
-            tabIndex="0"
-          >
-            Compétences
-          </Link> */}
           <Link to="/blogue/" activeClassName={"active"} exact tabIndex="0">
             Blogue
           </Link>

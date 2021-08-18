@@ -1,6 +1,4 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import Img from 'gatsby-image'
+import React from 'react'
 import * as PropTypes from 'prop-types'
 /** Style **/
 import styled from 'styled-components'
@@ -96,7 +94,6 @@ class C_Footer extends React.Component {
               <Icon name="linkedin" /> Linkedin
             </Button>
           </div>
-          {/* <img src={require('../../static/logos/logo.png')} /> */}
         </div>
       </Footer>
     )
