@@ -246,14 +246,6 @@ class IndexPage extends React.Component {
                 markdown={frHomepage.node.content.content}
                 style={{ marginBottom: 10 }}
               />
-              <a
-                href={require("../static/files/CV_Massimo_RUSSO.pdf")}
-                target={"_blank"}
-                title={"CV Massimo Russo - PDF"}
-                className={"ext-pdf"}
-              >
-                {frTelechargement}
-              </a>
             </Grid.Column>
             <Grid.Column width={5}>
               <LASTARTICLE />
